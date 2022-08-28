@@ -1,5 +1,19 @@
 :root {
   --font-primary: "Signika Negative", sans-serif;
+
+  // Colors theme depending on weather
+
+  --sunny-primary: rgb(112, 145, 223);
+  --sunny-secondary: rgb(100, 106, 173);
+  --sunny-tertiary: rgb(60, 67, 131);
+
+  --rainy-primary: rgb(112, 115, 165);
+  --rainy-secondary: rgb(53, 55, 89);
+  --rainy-tertiary: rgb(22, 29, 50);
+
+  --snowy-primary: rgb(36, 119, 130);
+  --snowy-secondary: rgb(35, 99, 100);
+  --snowy-tertiary: rgb(19, 72, 74);
 }
 
 *,
@@ -13,6 +27,7 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  color: white;
 }
 
 body {
@@ -24,80 +39,96 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 7vh 93vh;
-}
-
-.nav {
-  background-image: linear-gradient(
-    to right bottom,
-    rgb(74, 12, 140),
-    rgb(55, 25, 107)
-  );
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  grid-column: 1 / -1;
-
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  column-gap: 5rem;
-  align-items: center;
-
-  &__logo {
-    grid-column: 1 / 2;
-    background-image: url(../img/weather-logo.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-  }
-
-  &__date {
-    color: white;
-    font-size: 3rem;
-    text-align: center;
-  }
-
-  &__date span {
-    margin-right: 1rem;
-    font-weight: 600;
-  }
+  grid-template-rows: 100vh;
 }
 
 .main {
   grid-column: 1 / -1;
-  grid-row: 2 / -1;
-  position: relative;
+  grid-row: 1 / -1;
 
-  background-image: url(../img/body-background.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  // CLOUDY DAY
+  // background: linear-gradient(
+  //   to right bottom,
+  //   var(--rainy-primary),
+  //   var(--rainy-secondary)
+  // );
 
   display: grid;
   grid-template-columns:
-    repeat(2, 1fr) repeat(4, minmax(30rem, 1fr))
+    repeat(2, 1fr) repeat(4, minmax(10rem, 1fr))
     repeat(2, 1fr);
-  grid-template-rows: 1fr 5fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+
+  &:focus {
+    transform: scale(1.05);
+  }
 
   &__container {
     grid-column: 3 / span 4;
     grid-row: 2 / 3;
+    z-index: 30;
 
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.3) 1.5rem 1.5rem 1.4rem;
+    background: linear-gradient(
+      to right bottom,
+      var(--rainy-secondary),
+      var(--rainy-tertiary)
+    );
+
+    /*
+    ///////////////////////////////////////////////////
+    SUNNY MORNING
+    background: radial-gradient(
+      farthest-corner at -120vw 50vh,
+      var(--rainy-primary) 40%,
+      var(--rainy-secondary) 80%
+    );
+
+    box-shadow: rgba(0, 0, 0, 0.3) 1.5rem -1.5rem 1.4rem;
+    ///////////////////////////////////////////////////
+
+    SUNNY DAY
+    background: radial-gradient(
+      farthest-corner at -120vw 50vh,
+      var(--rainy-primary) 40%,
+      var(--rainy-secondary) 80%
+    );
+
+    box-shadow: rgba(0, 0, 0, 0.3) 1.5rem -1.5rem 1.4rem;
+
+
+
+
+    */
+
+    background: radial-gradient(
+      farthest-corner at -120vw 50vh,
+      var(--rainy-primary) 40%,
+      var(--rainy-secondary) 80%
+    );
+
+    box-shadow: rgba(0, 0, 0, 0.3) 1.5rem -1.5rem 1.4rem;
+
     border-radius: 25px;
     overflow: hidden;
 
-    &--up {
-      width: 100%;
-      height: 60%;
-      display: grid;
-      grid-template-columns: repeat(8, 1fr);
-      grid-template-rows: repeat(2, 50%);
-      background-image: url(../img/day-sunny.jpg);
-      background-size: 100% 100%;
-      background-origin: padding-box;
-      background-position: bottom;
+    &-input {
+      padding: 1rem;
+      width: 30rem;
+      height: 5rem;
+      border-radius: 200px;
+      border: 1px solid black;
+      transition: all 0.2s;
+      background-color: var(--rainy-tertiary);
+
+      &:focus {
+        transform: scaleX(1.1);
+      }
+    }
+
+    &-h1 {
+      text-align: center;
+      font-weight: 100;
+      font-size: 5rem;
     }
   }
 }
