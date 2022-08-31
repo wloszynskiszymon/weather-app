@@ -1,0 +1,71 @@
+.rainy {
+  &-morning {
+    background: radial-gradient(
+      farthest-corner at -30vw 140vh,
+      #7e7111 5%,
+      #113275 60%
+    );
+  }
+
+  &-day {
+    background: radial-gradient(
+      farthest-corner at 50vw -50vh,
+      #a9c2cf 15%,
+      #5454b5 90%
+    );
+  }
+
+  &-evening {
+    background: radial-gradient(
+      farthest-corner at 100vw 100vh,
+      #674812 5%,
+      #10486b 60%
+    );
+  }
+
+  &-night {
+    background: radial-gradient(
+      farthest-corner at 50vw -50vh,
+      #273251 15%,
+      #050a3d 90%
+    );
+  }
+}
+
+.rain,
+.rain::after,
+.rain::before {
+  content: "";
+  position: absolute;
+  top: -60vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(1px 30px at 100px 50px, #fff, transparent),
+    radial-gradient(1px 30px at 255px 100px, #fff, transparent),
+    radial-gradient(1px 30px at 535px 250px, #fff, transparent),
+    radial-gradient(1px 30px at 620px 530px, #fff, transparent),
+    radial-gradient(1px 30px at 190px 650px, #fff, transparent),
+    radial-gradient(1px 30px at 150px 120px, #fff, transparent),
+    radial-gradient(1px 30px at 400px 450px, #fff, transparent),
+    radial-gradient(1px 30px at 500px 480px, #fff, transparent),
+    radial-gradient(1px 30px at 630px 350px, #fff, transparent),
+    radial-gradient(1px 30px at 820px 170px, #fff, transparent);
+
+  background-size: 60vw 60vh;
+
+  animation: rain 1.5s linear;
+  animation-iteration-count: infinite;
+}
+
+.rain:after {
+  margin-left: -10vw;
+  opacity: 0.6;
+  filter: blur(2px);
+}
+
+.rain:before {
+  margin-left: -20vw;
+  opacity: 0.8;
+  filter: blur(1px);
+}

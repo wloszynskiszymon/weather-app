@@ -1,0 +1,55 @@
+@keyframes clouds-movement {
+  0% {
+    background-position-x: -100vw;
+  }
+
+  100% {
+    background-position-x: 100vw;
+  }
+}
+
+@keyframes night-shine {
+  0% {
+    filter: brightness(70%);
+  }
+
+  50% {
+    filter: brightness(95%);
+  }
+
+  100% {
+    filter: brightness(70%);
+  }
+}
+
+@keyframes day-shine {
+  20% {
+    filter: brightness(90%);
+  }
+
+  50% {
+    filter: brightness(110%);
+  }
+
+  80% {
+    filter: brightness(90%);
+  }
+}
+
+@keyframes snow {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(60vh);
+  }
+}
+
+@keyframes rain {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(60vh);
+  }
+}
