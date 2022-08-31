@@ -1,9 +1,12 @@
-.rainy {
+// Rain and thunder are here
+
+.rainy,
+.cloudy {
   &-morning {
     background: radial-gradient(
       farthest-corner at -30vw 140vh,
-      #7e7111 5%,
-      #113275 60%
+      #886015 15%,
+      #102d67 60%
     );
   }
 
@@ -54,8 +57,7 @@
 
   background-size: 60vw 60vh;
 
-  animation: rain 1.5s linear;
-  animation-iteration-count: infinite;
+  animation: rain 1.5s linear infinite;
 }
 
 .rain:after {
@@ -68,4 +70,16 @@
   margin-left: -20vw;
   opacity: 0.8;
   filter: blur(1px);
+}
+
+.thunder {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 15;
+  animation: thunder 7s linear infinite;
 }
