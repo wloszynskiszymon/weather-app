@@ -1,10 +1,32 @@
-.sunny {
+.sunny,
+.cloudy-scattered {
+  &-morning::before,
+  &-day::before,
+  &-evening::before,
+  &-night::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: night-shine 3s linear infinite;
+    transition: all 1s;
+    background-image: url(../img/sun-day.png);
+    background-repeat: no-repeat;
+    z-index: 5;
+    transform: scale(2);
+  }
+
   &-morning {
     background: radial-gradient(
       farthest-corner at -30vw 140vh,
       #96860a 20%,
       #1a1143 80%
     );
+
+    &::before {
+      top: 850;
+      left: 350;
+    }
   }
 
   &-day {
@@ -13,6 +35,11 @@
       #ffe100 20%,
       #6598ff 80%
     );
+
+    &::before {
+      top: -50;
+      left: 1150;
+    }
   }
 
   &-evening {
@@ -21,6 +48,10 @@
       #ff8000 20%,
       #5a3673 80%
     );
+    &::before {
+      top: 850;
+      left: 2000;
+    }
   }
 
   &-night {
@@ -29,85 +60,33 @@
       #7c96c6 25%,
       #060221 70%
     );
+    &::before {
+      top: 850;
+      left: 350;
+      background-image: url(../img/moon.png);
+    }
+  }
+
+  &-dupa {
+    background: linear-gradient(to bottom, #fff 2%, #000 50%);
   }
 }
-// .clouds {
-//   &::before {
-//     content: "";
-//     display: block;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     animation-name: clouds-movement;
-//     animation-duration: 30s;
-//     background-image: url(../img/cloudy-sky.png);
-//     background-repeat: repeat-x;
-//     background-size: 105% 100%;
-//     filter: brightness(70%);
 
-//     z-index: 10;
-//   }
-// }
-
-// .clouds {
-//   &::before {
-//     content: "";
-//     display: block;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     animation-name: night-shine;
-//     animation-iteration-count: infinite;
-//     animation-duration: 3s;
-//     animation-timing-function: linear;
-//     background-image: url(../img/sun-day.png);
-//     background-size: 120vh 120vh;
-//     background-repeat: no-repeat;
-//     background-position: 65vw 35vh;
-//   }
-// }
-
-// .clouds {
-//   &::before {
-//     content: "";
-//     display: block;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     animation-name: night-shine;
-//     animation-iteration-count: infinite;
-//     animation-duration: 3s;
-//     animation-timing-function: linear;
-//     background-image: url(../img/moon.png);
-//     background-size: 120vh 120vh;
-//     background-repeat: no-repeat;
-//     background-position: 10vw -70vh;
-//   }
-// }
-
-// .clouds {
-//   &::before {
-//     content: "";
-//     display: block;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     animation: thunder 7s linear;
-//     animation-iteration-count: infinite;
-//     animation-delay: 5s;
-//     background-color: white;
-//     background-repeat: repeat-x;
-//     background-size: 100% 100%;
-//     opacity: 0;
-
-//     z-index: 10;
-//   }
-// }
+.cloudy-scattered {
+  &-morning::after,
+  &-day::after,
+  &-evening::after,
+  &-night::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/clouds-scattered.png);
+    background-size: cover;
+    animation: clouds-movement 30s linear infinite;
+    background-repeat: repeat-x;
+    z-index: 7;
+  }
+}

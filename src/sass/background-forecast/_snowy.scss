@@ -2,8 +2,8 @@
   &-morning {
     background: radial-gradient(
       farthest-corner at -30vw 140vh,
-      #b39f0d 5%,
-      #146f7b 60%
+      #f49f0e 5%,
+      #15678d 60%
     );
   }
 
@@ -16,24 +16,18 @@
   }
 
   &-evening {
-    // background: radial-gradient(
-    //   farthest-corner at 50vw -50vh,
-    //   #592914 70%,
-    //   #1c4e6d 20%
-    // );
-
     background: radial-gradient(
       farthest-corner at 100vw 100vh,
       #674812 5%,
-      #10486b 60%
+      #183e55 40%
     );
   }
 
   &-night {
     background: radial-gradient(
       farthest-corner at 50vw -50vh,
-      #0b7679 25%,
-      #03182f 90%
+      #04374d 25%,
+      #011021 90%
     );
   }
 }

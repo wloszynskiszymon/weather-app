@@ -1,20 +1,32 @@
 // Rain and thunder are here
 
+.thunder {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 15;
+  animation: thunder 7s linear infinite;
+}
+
 .rainy,
 .cloudy {
   &-morning {
     background: radial-gradient(
       farthest-corner at -30vw 140vh,
-      #886015 15%,
-      #102d67 60%
+      #986913 10%,
+      #2f4571 50%
     );
   }
 
   &-day {
     background: radial-gradient(
       farthest-corner at 50vw -50vh,
-      #a9c2cf 15%,
-      #5454b5 90%
+      #819bc0 15%,
+      #30309c 90%
     );
   }
 
@@ -22,14 +34,14 @@
     background: radial-gradient(
       farthest-corner at 100vw 100vh,
       #674812 5%,
-      #10486b 60%
+      #07324d 40%
     );
   }
 
   &-night {
     background: radial-gradient(
       farthest-corner at 50vw -50vh,
-      #273251 15%,
+      #18223d 15%,
       #050a3d 90%
     );
   }
@@ -44,6 +56,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  mask-image: linear-gradient(to bottom, transparent 8%, #000 20%);
   background: radial-gradient(1px 30px at 100px 50px, #fff, transparent),
     radial-gradient(1px 30px at 255px 100px, #fff, transparent),
     radial-gradient(1px 30px at 535px 250px, #fff, transparent),
@@ -70,16 +83,4 @@
   margin-left: -20vw;
   opacity: 0.8;
   filter: blur(1px);
-}
-
-.thunder {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  z-index: 15;
-  animation: thunder 7s linear infinite;
 }
