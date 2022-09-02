@@ -10,8 +10,8 @@
   &-day {
     background: radial-gradient(
       farthest-corner at 50vw -50vh,
-      #74eef3 25%,
-      #088696 90%
+      #51b5b8 25%,
+      #077a89 90%
     );
   }
 
@@ -42,30 +42,8 @@
   right: 0;
   bottom: 0;
 
-  background: radial-gradient(4px 4px at 150px 240px, #fff, transparent),
-    radial-gradient(
-      4px 4px at 100px 50px,
-      rgba(255, 255, 255, 0.852),
-      transparent
-    ),
-    radial-gradient(6px 6px at 255px 100px, #fff, transparent),
-    radial-gradient(
-      7px 7px at 535px 250px,
-      rgba(255, 255, 255, 0.697),
-      transparent
-    ),
-    radial-gradient(3px 3px at 620px 530px, rgb(255, 255, 255), transparent),
-    radial-gradient(5px 5px at 190px 650px, #fff, transparent),
-    radial-gradient(2px 2px at 150px 120px, #fff, transparent),
-    radial-gradient(6px 6px at 400px 450px, #fff, transparent),
-    radial-gradient(
-      4px 4px at 500px 480px,
-      rgba(240, 240, 240, 0.647),
-      transparent
-    ),
-    radial-gradient(3px 3px at 630px 350px, #fff, transparent),
-    radial-gradient(4px 4px at 700px 250px, #fff, transparent),
-    radial-gradient(5px 5px at 800px 150px, #fff, transparent);
+  // Snow dots gradient
+  @include bg-dots;
   background-size: 60vw 60vh;
 
   animation: snow 2s linear;

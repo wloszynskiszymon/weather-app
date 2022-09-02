@@ -47,6 +47,46 @@
   }
 }
 
+.cloudy-scattered {
+  &-morning::after,
+  &-day::after,
+  &-evening::after,
+  &-night::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/clouds-scattered.png);
+    background-size: cover;
+    animation: clouds-movement 30s linear infinite;
+    background-repeat: repeat-x;
+    z-index: 7;
+  }
+
+  &-morning {
+    &::after {
+      filter: invert(85%) sepia(25%) saturate(952%) hue-rotate(50deg)
+        brightness(308%) contrast(80%);
+    }
+  }
+
+  &-evening {
+    &::after {
+      filter: invert(89%) sepia(20%) saturate(574%) hue-rotate(300deg)
+        brightness(397%) contrast(87%);
+    }
+  }
+
+  &-night {
+    &::after {
+      filter: invert(8%) sepia(14%) saturate(2791%) hue-rotate(177deg)
+        brightness(20%) contrast(94%);
+    }
+  }
+}
+
 .rainy,
 .snowy {
   &-morning::before,
@@ -107,8 +147,8 @@
 
   &-night {
     &::before {
-      filter: invert(5%) sepia(15%) saturate(2547%) hue-rotate(121deg)
-        brightness(35%) contrast(103%);
+      filter: invert(5%) sepia(25%) saturate(3547%) hue-rotate(141deg)
+        brightness(20%) contrast(63%);
     }
   }
 }
