@@ -1,0 +1,38 @@
+:root {
+  --font-primary: "Signika Negative", sans-serif;
+
+  // Colors theme depending on weather
+
+  --sunny-primary: rgb(112, 145, 223);
+  --sunny-secondary: rgb(100, 106, 173);
+  --sunny-tertiary: rgb(60, 67, 131);
+
+  --rainy-primary: rgb(112, 115, 165);
+  --rainy-secondary: rgb(53, 55, 89);
+  --rainy-tertiary: rgb(22, 29, 50);
+
+  --snowy-primary: rgb(36, 119, 130);
+  --snowy-secondary: rgb(35, 99, 100);
+  --snowy-tertiary: rgb(19, 72, 74);
+
+  --theme-container-light: rgb(112, 145, 223);
+  --theme-container-dark: rgb(53, 55, 89);
+  --theme-container-input: rgb(60, 67, 131);
+
+  // Radial radient options
+  --corner-day-night: circle at 50% -25%;
+  --corner-morning: farthest-corner at -120vw 50vh;
+  --corner-evening: farthest-corner at 120vw 50vh;
+
+  // Shadow options
+  --shadow-day-night: rgba(0, 0, 0, 0.2) 0 2rem 1.5rem 1rem;
+  --shadow-morning: rgba(0, 0, 0, 0.3) 1.5rem -1.5rem 1.4rem;
+  --shadow-evening: rgba(0, 0, 0, 0.3) 2rem -1.5rem -1.5rem 1.4rem;
+
+  // VARIABLES FOR DEVELOPMENT
+  --container-background: radial-gradient(
+    circle at 50% -25%,
+    var(--theme-container-light) 40%,
+    var(--theme-container-dark) 80%
+  );
+}

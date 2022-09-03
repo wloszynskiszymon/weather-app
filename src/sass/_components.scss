@@ -1,243 +1,50 @@
-// background: linear-gradient(
-//   to right bottom,
-//   var(--rainy-primary),
-//   var(--rainy-secondary)
-// );
+.main {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
 
-// SUNNY WEATHER
-/*
-/////////////////////////////////////////////////// SUNNY {
-  SUNNY MORNING
-    background: radial-gradient(
-    farthest-corner at -30vw 140vh,
-    #96860a 20%,
-    #1a1143 80%
-  );
-}
+  position: relative;
+  display: grid;
+  grid-template-columns:
+    repeat(2, 1fr) repeat(4, minmax(10rem, 1fr))
+    repeat(2, 1fr);
+  grid-template-rows: 1fr 2fr 1fr;
 
-.clouds {
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation-name: day-shine;
-    animation-iteration-count: infinite;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    background-image: url(../img/sun-day.png);
-    background-repeat: no-repeat;
-    background-size: 100vh 100vh;
-    background-position: -20vw 55vh;
+  // Container for the app
+  &__container {
+    grid-column: 3 / span 4;
+    grid-row: 2 / 3;
+    z-index: 30;
 
-    z-index: 9;
+    box-shadow: rgba(0, 0, 0, 0.15) -0.5rem -0.5rem 2rem 1rem;
+
+    border-radius: 25px;
+    border: 1px solid black;
+    overflow: hidden;
+    position: relative;
+    // background: radial-gradient(circle at 50% -25%, #7c96c6 5%, #060221 45%);
+    backdrop-filter: blur(6px) brightness(120%);
+
+    &-input {
+      padding: 1rem;
+      width: 30rem;
+      height: 5rem;
+      border-radius: 200px;
+      border: 1px solid black;
+      transition: all 0.2s;
+      // background-color: var(--rainy-tertiary);
+      background: inherit;
+      backdrop-filter: brightness(30%);
+
+      &:focus {
+        transform: scaleX(1.1);
+      }
+    }
+
+    &-h1 {
+      text-align: center;
+      font-weight: 100;
+      font-size: 5rem;
+      text-shadow: #000 0 0 0.9rem;
+    }
   }
 }
-
-///////////////////////////////////////////////////
-  SUNNY DAY
-  background: radial-gradient(
-    farthest-corner at 40vw -130vh,
-    #ffe100 20%,
-    #6598ff 80%
-  );
-
-  .clouds {
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation-name: day-shine;
-    animation-iteration-count: infinite;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    background-image: url(../img/sun-day.png);
-    background-repeat: no-repeat;
-    background-size: 100vh 100vh;
-    background-position: 20vw -40vh;
-
-    z-index: 9;
-  }
-
-///////////////////////////////////////////////////
-  SUNNY EVENING
-  background: radial-gradient(
-    farthest-corner at 100vw 130vh,
-    #ff8000 20%,
-    #5a3673 80%
-  );
-
-  
-.clouds {
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation-name: night-shine;
-    animation-iteration-count: infinite;
-    animation-duration: 3s;
-    animation-timing-function: linear;
-    background-image: url(../img/sun-day.png);
-    background-size: 120vh 120vh;
-    background-repeat: no-repeat;
-    background-position: 65vw 35vh;
-  }
-}
-
-///////////////////////////////////////////////////
-  SUNNY NIGHT
-  background: radial-gradient(
-    farthest-corner at 40vw -130vh,
-    #7c96c6 25%,
-    #060221 70%
-  );
-
-  .clouds {
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation-name: night-shine;
-    animation-iteration-count: infinite;
-    animation-duration: 3s;
-    animation-timing-function: linear;
-    background-image: url(../img/moon.png);
-    background-size: 120vh 120vh;
-    background-repeat: no-repeat;
-    background-position: 10vw -70vh;
-  }
-}
-
-///////////////////////////////////////////////////
-  */
-
-// SNOWY WEATHER
-/*
-  ///////////////////////////////////////////////////
-  SNOWY MORNING
-    background: radial-gradient(
-    farthest-corner at -30vw 140vh,
-    #96860a 20%,
-    #1a1143 80%
-  );
-}
-
-.clouds {
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation-name: day-shine;
-    animation-iteration-count: infinite;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    background-image: url(../img/sun-day.png);
-    background-repeat: no-repeat;
-    background-size: 100vh 100vh;
-    background-position: -20vw 55vh;
-
-    z-index: 9;
-  }
-}
-}
-
-///////////////////////////////////////////////////
-  SNOWY DAY
-  
-
-///////////////////////////////////////////////////
-  SNOWY EVENING
-  background: radial-gradient(
-    farthest-corner at 100vw 130vh,
-    #ff8000 20%,
-    #5a3673 80%
-  );
-
-///////////////////////////////////////////////////
-  SNOWY NIGHT
-  background: radial-gradient(
-    farthest-corner at 40vw -130vh,
-    #8493af 10%,
-    #060221 70%
-  );
-
-  */
-
-// .clouds {
-//   &::before {
-//     content: "";
-//     display: block;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     animation-name: night-shine;
-//     animation-iteration-count: infinite;
-//     animation-duration: 3s;
-//     animation-timing-function: linear;
-//     background-image: url(../img/sun-day.png);
-//     background-size: 120vh 120vh;
-//     background-repeat: no-repeat;
-//     background-position: 65vw 35vh;
-//   }
-// }
-
-// .clouds {
-//   &::before {
-//     content: "";
-//     display: block;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     animation-name: clouds-movement;
-//     animation-iteration-count: infinite;
-//     animation-duration: 60s;
-//     animation-timing-function: linear;
-//     background-image: url(../img/cloud-4.png);
-//     background-repeat: repeat-x;
-//     background-size: 100% 100%;
-
-//     z-index: 9;
-//   }
-
-//   &::after {
-//     content: "";
-//     display: block;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     animation-name: clouds-movement;
-//     animation-duration: 30s;
-//     background-image: url(../img/cloud-3.png);
-//     background-repeat: repeat-x;
-//     background-size: 100% 140%;
-//     background-position-y: -10vh;
-//     filter: brightness(70%);
-
-//     z-index: 10;
-//   }
-// }
