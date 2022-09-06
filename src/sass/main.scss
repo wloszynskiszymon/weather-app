@@ -1,8 +1,9 @@
 // Main sass file
-@import "variables";
 @import "base";
 @import "components";
-@import "layout";
+@import "nav";
+@import "form";
+@import "variables";
 @import "animations";
 @import "mixins";
 @import "./background-forecast/rainy";

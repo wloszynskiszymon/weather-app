@@ -17,21 +17,90 @@
   <body>
     <!-- https://openweathermap.org/ -->
     <div class="container">
-      <div id="background" class="precipitations sunny-evening">
+      <div id="background" class="precipitations sunny-night">
         <div class="snow hidden"></div>
         <div class="rain hidden"></div>
         <div class="thunder hidden"></div>
       </div>
       <main class="main">
-        <div class="main__container">
-          <h1 class="main__container-h1">Weather App</h1>
+        <nav class="nav">
+          <div class="nav__circle">
+            <input type="checkbox" class="nav__circle-checkbox">
+            <div class="nav__circle-background"></div>
+            <div class="nav__circle-line"></div>
+          </div>
+        </nav>
+
+        <form class="form" action="#">
+          <div class="form__box">
+          <h1 class="form__box-h1" for="weather-select">Select weather theme</h1>
+            <label class="form__box-label" for="sunny">Sunny
+              <input class="form__box-input" type="radio" name="weather" value="sunny" id="sunny">
+            </label>
+
+            <label class="form__box-label" for="rainy">Rainy
+              <input class="form__box-input" type="radio" name="weather" value="rainy" id="rainy">
+            </label>
+
+            <label class="form__box-label" for="snowy">Snowy
+              <input class="form__box-input" type="radio" name="weather" value="snowy" id="snowy">
+            </label>
+
+            <label class="form__box-label" for="thunder">Thunder
+              <input class="form__box-input" type="radio" name="weather" value="thunder" id="thunder">
+            </label>
+
+            <label class="form__box-label" for="clouds">Clouds
+              <input class="form__box-input" type="radio" name="weather" value="clouds" id="clouds">
+            </label>
+
+            <label class="form__box-label" for="clouds-scattered">Scattered Clouds
+              <input class="form__box-input" type="radio" name="weather" value="clouds-scattered" id="clouds-scattered">
+            </label>
+        </div>
+        <div class="form__box">
+          <h1 class="form__box-h1" for="time-select">Select time</h1>
+          <label class="form__box-label" for="morning">Morning
+            <input class="form__box-input" type="radio" name="time" value="morning" id="morning">
+          </label>
+
+          <label class="form__box-label" for="day">Day
+            <input class="form__box-input" type="radio" name="time" value="day" id="Day">
+          </label>
+
+          <label class="form__box-label" for="evening">Evening
+            <input class="form__box-input" type="radio" name="time" value="evening" id="evening">
+          </label>
+
+          <label class="form__box-label" for="night">Night
+            <input class="form__box-input" type="radio" name="time" value="night" id="night">
+          </label>
+        </div>
+
+        <input type="submit" value="Set theme">
+        </form>
+        <!-- <div class="main__container">
+          <label class="form-label" for="city-input">Find your city!</label>
           <input
             type="name"
             name="city"
-            placeholder="City name..."
-            class="main__container-input"
+            placeholder="Type your location"
+            id="city-input"
+            class="form-input"
           />
-        </div>
+
+          <form action="" class="main__container__form">
+          <h1 class="main__container-h1">Enter your city...</h1>
+            <input
+            type="name"
+            name="city"
+            placeholder="City name..."
+            class="main__container__form-input"
+          />
+          <input type="submit" value="Check weather in this city">
+          </form>
+          
+        </div> -->
       </main>
   </body>
 </html>

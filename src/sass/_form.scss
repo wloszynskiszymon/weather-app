@@ -1,0 +1,44 @@
+.form {
+  z-index: 500;
+  width: 40vw;
+  height: 35vh;
+  background-color: black;
+  text-align: center;
+  text-transform: uppercase;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__box {
+    margin: 2rem;
+    padding: 1rem;
+
+    &:hover &-label:not(:hover) {
+      color: red;
+    }
+
+    &-h1 {
+      color: white;
+      text-decoration: underline;
+      margin-bottom: 1.1rem;
+    }
+
+    &-label {
+      display: block;
+      font-size: 2rem;
+      font-style: italic;
+      color: grey;
+      margin-bottom: 0.7rem;
+
+      &:hover {
+        color: yellow;
+        transform: scale(1.1);
+      }
+    }
+
+    &-input {
+      opacity: 0;
+    }
+  }
+}
