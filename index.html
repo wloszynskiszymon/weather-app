@@ -5,12 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <!-- Old font -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;600&display=swap"
       rel="stylesheet"
-    />
+    /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600&display=swap" rel="stylesheet">
+
+
     <link rel="stylesheet" href="src/sass/main.scss" />
     <script defer src="src/js/app.js"></script>
   </head>
@@ -39,9 +46,8 @@
             id="city-input"
             class="search-form__input"
           />
-          <svg class="search-form__icon-search">
-            <use href="src/img/search-icon.svg"></use>
-        </svg>
+          <img src="src/img/search-icon.svg" class="search-form__icon-search">
+
         </form>
  
         <!-- Form for the theme -->
@@ -85,6 +91,18 @@
 
         <input class="theme-form-submit" type="submit" value="Set theme">
         </form>
+
+        <section class="info">
+          <div class="info__container">
+            <p class="info__container-temperature">18&deg;</p>
+            
+            <div class="info__container__location">
+              <p class="info__container__location-city">Poznan, Poland</p>
+              <p class="info__container__location-date">14 Sep 2022, 21:37</p>
+            </div>
+
+          </div>
+        </section>
         
       </main>
   </body>
