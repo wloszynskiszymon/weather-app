@@ -31,69 +31,61 @@
           </div>
         </nav>
 
-        <!-- <div class="bg-form hide"></div> -->
-        <form class="form hide" action="#">
-          <div class="form__box--left">
-            <h1 class="form__box-h1" for="weather-select">Select weather theme</h1>
-            
-            <input class="form__box-input" type="radio" name="weather" value="sunny" id="sunny">
-            <label class="form__box-label" for="sunny">Sunny</label>
-
-
-            <input class="form__box-input" type="radio" name="weather" value="rainy" id="rainy">
-            <label class="form__box-label" for="rainy">Rainy</label>
-
-            <input class="form__box-input" type="radio" name="weather" value="snowy" id="snowy">
-            <label class="form__box-label" for="snowy">Snowy</label>
-
-            <input class="form__box-input" type="radio" name="weather" value="thunder" id="thunder">
-            <label class="form__box-label" for="thunder">Thunder</label>
-
-            <input class="form__box-input" type="radio" name="weather" value="clouds" id="clouds">
-            <label class="form__box-label" for="clouds">Clouds</label>
-
-            <input class="form__box-input" type="radio" name="weather" value="clouds-scattered" id="clouds-scattered">
-            <label class="form__box-label" for="clouds-scattered">Scattered Clouds</label>
-        </div>
-        <div class="form__box--right">
-          <h1 class="form__box-h1" for="time-select">Select time</h1>
-          <input class="form__box-input" type="radio" name="time" value="morning" id="morning">
-          <label class="form__box-label" for="morning">Morning</label>
-
-          <input class="form__box-input" type="radio" name="time" value="day" id="day">
-          <label class="form__box-label" for="day">Day</label>
-
-          <input class="form__box-input" type="radio" name="time" value="evening" id="evening">
-          <label class="form__box-label" for="evening">Evening</label>
-
-          <input class="form__box-input" type="radio" name="time" value="night" id="night">
-          <label class="form__box-label" for="night">Night</label>
-        </div>
-
-        <input class="form-submit" type="submit" value="Set theme">
-        </form>
-        <!-- <div class="main__container">
-          <label class="form-label" for="city-input">Find your city!</label>
+        <form class="search-form">
           <input
             type="name"
             name="city"
-            placeholder="Type your location"
+            placeholder="Enter city name"
             id="city-input"
-            class="form-input"
+            class="search-form__input"
           />
+          <svg class="search-form__icon-search">
+            <use href="src/img/search-icon.svg"></use>
+        </svg>
+        </form>
+ 
+        <!-- Form for the theme -->
+        <form class="theme-form" action="#">
+          <div class="theme-form__box--left">
+            <h1 class="theme-form__box-h1" for="weather-select">Select weather theme</h1>
+            
+            <input class="theme-form__box-input" type="radio" name="weather" value="sunny" id="sunny">
+            <label class="theme-form__box-label" for="sunny">Sunny</label>
 
-          <form action="" class="main__container__form">
-          <h1 class="main__container-h1">Enter your city...</h1>
-            <input
-            type="name"
-            name="city"
-            placeholder="City name..."
-            class="main__container__form-input"
-          />
-          <input type="submit" value="Check weather in this city">
-          </form>
-          
-        </div> -->
+
+            <input class="theme-form__box-input" type="radio" name="weather" value="rainy" id="rainy">
+            <label class="theme-form__box-label" for="rainy">Rainy</label>
+
+            <input class="theme-form__box-input" type="radio" name="weather" value="snowy" id="snowy">
+            <label class="theme-form__box-label" for="snowy">Snowy</label>
+
+            <input class="theme-form__box-input" type="radio" name="weather" value="thunder" id="thunder">
+            <label class="theme-form__box-label" for="thunder">Thunder</label>
+
+            <input class="theme-form__box-input" type="radio" name="weather" value="clouds" id="clouds">
+            <label class="theme-form__box-label" for="clouds">Clouds</label>
+
+            <input class="theme-form__box-input" type="radio" name="weather" value="clouds-scattered" id="clouds-scattered">
+            <label class="theme-form__box-label" for="clouds-scattered">Scattered Clouds</label>
+        </div>
+        <div class="theme-form__box--right">
+          <h1 class="theme-form__box-h1" for="time-select">Select time</h1>
+          <input class="theme-form__box-input" type="radio" name="time" value="morning" id="morning">
+          <label class="theme-form__box-label" for="morning">Morning</label>
+
+          <input class="theme-form__box-input" type="radio" name="time" value="day" id="day">
+          <label class="theme-form__box-label" for="day">Day</label>
+
+          <input class="theme-form__box-input" type="radio" name="time" value="evening" id="evening">
+          <label class="theme-form__box-label" for="evening">Evening</label>
+
+          <input class="theme-form__box-input" type="radio" name="time" value="night" id="night">
+          <label class="theme-form__box-label" for="night">Night</label>
+        </div>
+
+        <input class="theme-form-submit" type="submit" value="Set theme">
+        </form>
+        
       </main>
   </body>
 </html>
