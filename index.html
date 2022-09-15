@@ -19,13 +19,13 @@
 
 
     <link rel="stylesheet" href="src/sass/main.scss" />
-    <script defer src="src/js/app.js"></script>
+    <script defer type="module" src="src/js/app.js"></script>
   </head>
   <body>
     <!-- https://openweathermap.org/ -->
     <div class="container">
-      <div id="background" class="precipitations sunny-night">
-        <div class="snow hidden"></div>
+      <div id="background" class="precipitations snowy-night">
+        <div class="snow"></div>
         <div class="rain hidden"></div>
         <div class="thunder hidden"></div>
       </div>
@@ -100,7 +100,11 @@
               <p class="info__container__location-city">Poznan, Poland</p>
               <p class="info__container__location-date">14 Sep 2022, 21:37</p>
             </div>
-
+            <div class="info__container-weather">
+              <img src="src/img/search-icon.svg" class="info__container-weather-icon">
+              <p class="info__container-weather-name">Sunny</p>
+            </div>
+            
           </div>
         </section>
         
