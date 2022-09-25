@@ -1,20 +1,20 @@
-.theme-form {
+.theme {
   grid-column: 1 / 12;
   grid-row: 1 / 12;
   z-index: 950;
 
   display: grid;
-  overflow: hidden;
   grid-template-rows: 15vh repeat(2, 35vh) 15vh;
   grid-template-columns: 15vw repeat(2, 35vw) 15vw;
   align-items: center;
   justify-items: center;
 
+  overflow: hidden;
   visibility: hidden;
   opacity: 0;
 
   transform: translateY(100rem);
-  transition: all 0.4s 0s;
+  transition: all 0.4s;
 
   // background-color: rgba(0, 0, 0, 0.3);
   text-align: center;
@@ -24,15 +24,18 @@
     visibility: visible;
     opacity: 1;
     transform: translateY(0) scale(1);
-    transition: all 0.4s 0.4s;
+    transition: all 0.4s 0.5s;
   }
 
   &-submit {
     grid-row: 3 / 4;
     grid-column: 2 / 4;
+
     width: 30rem;
     height: 5rem;
+
     align-self: flex-end;
+
     text-transform: uppercase;
     font-size: 2rem;
     font-weight: 700;

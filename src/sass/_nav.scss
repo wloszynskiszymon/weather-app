@@ -1,56 +1,32 @@
 .nav {
-  position: absolute;
-  right: 2.5rem;
-  top: 2.5rem;
-  border-radius: 50%;
-  width: 7rem;
-  height: 7rem;
-  z-index: 900;
-
+  // Nav opening themes form
   &__circle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    right: 2.5rem;
+    top: 2.5rem;
     border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+    z-index: 900;
 
-    width: 100%;
-    height: 100%;
+    // Hide animation
+    &--hidden {
+      visibility: hidden;
+      transform: translateX(10vw);
+    }
 
+    // Invisible checkbox defining wheter it was clicked or not
     &-checkbox {
       all: unset;
       position: absolute;
       width: 100%;
       height: 100%;
-      border-radius: 50%;
-      z-index: 1000;
+      z-index: 901;
       opacity: 0;
       cursor: pointer;
     }
 
-    &-checkbox:checked ~ &-line {
-      background-color: transparent;
-    }
-
-    &-checkbox:checked ~ &-line::before {
-      transform: rotate(45deg) translateX(13%);
-      transform-origin: 20%;
-    }
-    &-checkbox:checked ~ &-line::after {
-      transform: rotate(-45deg) translateX(13%);
-      transform-origin: 20%;
-    }
-
-    &-checkbox:checked ~ &-background {
-      background-color: rgba(0, 0, 0, 0.9);
-      width: 150vh;
-      height: 150vh;
-      transform: scale(6);
-    }
-
-    &-checkbox:checked .form {
-      display: grid;
-    }
-
+    // Black transparent background cirlce
     &-background {
       position: absolute;
       width: 100%;
@@ -61,32 +37,138 @@
       transform: scale(1);
     }
 
+    // Adds 3 white lines on background
     &-line {
       display: flex;
       position: relative;
       width: 60%;
       height: 3px;
+
       background-color: white;
 
-      &::before {
-        content: "";
-        width: 100%;
-        position: absolute;
-        top: -1.3rem;
-        transition: 0.2s all;
-        height: 3px;
-        background-color: white;
-      }
-
+      &::before,
       &::after {
         content: "";
         width: 100%;
         position: absolute;
-        top: 1.3rem;
         transition: 0.2s all;
         height: 3px;
         background-color: white;
       }
+
+      &::before {
+        top: -1.3rem;
+      }
+
+      &::after {
+        top: 1.3rem;
+      }
+    }
+
+    // Animation of lines
+    &-checkbox:checked ~ &-line {
+      background-color: transparent;
+    }
+
+    &-checkbox:checked ~ &-line::before {
+      transform: rotate(45deg) translateX(13%);
+      transform-origin: 20%;
+    }
+
+    &-checkbox:checked ~ &-line::after {
+      transform: rotate(-45deg) translateX(13%);
+      transform-origin: 20%;
+    }
+
+    // Background increase animation
+    &-checkbox:checked ~ &-background {
+      background-color: rgba(0, 0, 0, 0.9);
+      width: 150vh;
+      height: 150vh;
+      transform: scale(6);
+    }
+
+    &-checkbox:checked .form {
+      display: grid;
+    }
+  }
+
+  // Container creating circle
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  // Nav from themes to entry view
+  &__back {
+    grid-column: 6 / span 2;
+    grid-row: 1 / 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      cursor: pointer;
+      text-align: center;
+      font-size: 3rem;
+      text-decoration: underline;
+    }
+  }
+
+  // Nav from weather info to entry view
+  &__arrow {
+    position: absolute;
+    left: 2.5rem;
+    top: 2.5rem;
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+    z-index: 900;
+    transition: 0.5s all;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+    cursor: pointer;
+
+    &--hidden {
+      transform: translateX(-20vw);
+    }
+
+    &__icon {
+      z-index: 1000;
+      width: 60%;
+      height: 100%;
+
+      filter: var(--filter-grey);
+    }
+
+    // &--hidden {
+    //   visibility: hidden;
+    //   transform: translateX(10vw);
+    // }
+  }
+
+  // Nav from entry view to themes view "See all possible themes"
+  &__link {
+    all: unset;
+    font-size: 1.5rem;
+    color: lightgrey;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: 5rem;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }

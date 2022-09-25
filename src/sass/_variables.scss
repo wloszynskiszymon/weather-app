@@ -29,10 +29,7 @@
   --shadow-morning: rgba(0, 0, 0, 0.3) 1.5rem -1.5rem 1.4rem;
   --shadow-evening: rgba(0, 0, 0, 0.3) 2rem -1.5rem -1.5rem 1.4rem;
 
-  // VARIABLES FOR DEVELOPMENT
-  --container-background: radial-gradient(
-    circle at 50% -25%,
-    var(--theme-container-light) 40%,
-    var(--theme-container-dark) 80%
-  );
+  // filter colors
+  --filter-grey: invert(68%) sepia(0%) saturate(1204%) hue-rotate(188deg)
+    brightness(74%) contrast(84%);
 }
