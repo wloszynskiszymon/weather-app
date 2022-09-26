@@ -6,16 +6,13 @@
   &-day::before,
   &-evening::before,
   &-night::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation: clouds-movement 30s linear infinite;
+    @include full-screen-absolute;
+
     background-image: url(../img/cloudy-sky.png);
     background-repeat: repeat-x;
     background-size: 100% 100%;
+
+    animation: clouds-movement 30s linear infinite;
     z-index: 10;
   }
 
@@ -52,16 +49,13 @@
   &-day::after,
   &-evening::after,
   &-night::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    @include full-screen-absolute;
+
     background-image: url(../img/clouds-scattered.png);
     background-size: cover;
     animation: clouds-movement 30s linear infinite;
     background-repeat: repeat-x;
+
     z-index: 7;
   }
 
@@ -93,12 +87,8 @@
   &-day::before,
   &-evening::before,
   &-night::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    @include full-screen-absolute;
+
     animation: clouds-movement 80s linear infinite;
     background-image: url(../img/clouds-rain.png);
     background-repeat: repeat-x;

@@ -1,56 +1,42 @@
 .sunny,
 .cloudy-scattered {
-  &-morning::before,
   &-day::before,
-  &-evening::before,
   &-night::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    @include full-screen-absolute;
+
     animation: night-shine 3s linear infinite;
     transition: all 1s;
     background-image: url(../img/sun-day.png);
     background-repeat: no-repeat;
+    @include sun-moon-day-fix;
+
     z-index: 5;
     transform: scale(2);
+    transform-origin: center center;
   }
 
   &-morning {
     background: radial-gradient(
-      farthest-corner at -30vw 140vh,
-      #96860a 20%,
+      farthest-corner at 0 100vh,
+      #9f9127 5%,
       #40395f 70%
     );
-
-    &::before {
-      top: 850;
-      left: 350;
-    }
   }
 
   &-day {
     background: radial-gradient(
-      farthest-corner at 40vw -130vh,
-      #ffe100 20%,
+      farthest-corner at 40vw -100vh,
+      #d9ff00 20%,
       #6598ff 70%
     );
-
-    &::before {
-      @include sun-moon-day-fix;
-    }
   }
 
   &-evening {
     background: radial-gradient(
-      farthest-corner at 100vw 130vh,
-      #ff8000 20%,
+      farthest-corner at 140vw 100vh,
+      #d5710c 20%,
       #5a3673 70%
     );
-    &::before {
-      top: 850;
-      left: 2000;
-    }
   }
 
   &-night {
@@ -61,17 +47,11 @@
     );
 
     &::before {
-      @include sun-moon-day-fix;
       background-image: url(../img/moon.png);
     }
 
     &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      @include full-screen-absolute;
       // Star dots gradient
       @include bg-dots;
       background-size: 50vw 50vh;

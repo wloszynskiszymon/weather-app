@@ -15,13 +15,16 @@ const navLink = document.querySelector(".nav__link");
 
 // For weather info
 const background = document.querySelector("#background");
+const precipitationBg = document.querySelector("#precipitation-fall");
 
 // Search
 
 const state = {
   background: "first-entry",
-  weather: "snowy",
-  timeOfDay: "night",
+  weather: "sunny",
+  timeOfDay: "evening",
+  isPrecipitation: true,
+  precipitation: "snow",
   loadedCity: "false",
   themeNavOpened: "false",
 };
@@ -31,19 +34,21 @@ const changeView = function () {
   navArrow.classList.toggle("nav__arrow--hidden");
   searchLoadedForm.classList.toggle("search-loaded--hidden");
   weatherInfo.classList.toggle("info--hidden");
+
   if (state.loadedCity) {
     background.classList.remove(state.background);
     state.background = generateBgClass();
     background.classList.add(state.background);
     state.loadedCity = !state.loadedCity;
-    return;
+  } else {
+    background.classList.remove(state.background);
+    state.background = "first-entry";
+    background.classList.add(state.background);
+    state.loadedCity = !state.loadedCity;
+    if (state.isPrecipitation) {
+      precipitationBg.classList.remove(state.precipitation);
+    }
   }
-
-  background.classList.remove(state.background);
-  state.background = "first-entry";
-  background.classList.add(state.background);
-  state.loadedCity = !state.loadedCity;
-  return;
 };
 
 const generateBgClass = function () {

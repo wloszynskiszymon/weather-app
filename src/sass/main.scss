@@ -1,12 +1,13 @@
 // Main sass file
+@import "mixins";
+@import "variables";
 @import "base";
 @import "nav";
 @import "info";
 @import "theme-form";
 @import "search-form";
-@import "variables";
+
 @import "animations";
-@import "mixins";
 @import "./background-forecast/rainy";
 @import "./background-forecast/snowy";
 @import "./background-forecast/sunny";

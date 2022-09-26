@@ -17,108 +17,114 @@
 
 <body>
   <!-- https://openweathermap.org/ -->
-  <div class="container">
-    <div id="background" class="precipitations first-entry">
-      <div id="atmospheric-fall" class=""></div>
-    </div>
+  <div id="background" class="background precipitations first-entry">
+    <div id="atmospheric-fall" class=""></div>
+  </div>
 
-    <main class="main">
-      <!-- Nav themes (entryView to themesView) -->
-      <nav class="nav__circle nav__circle--hidden">
-        <div class="nav__container">
-          <input type="checkbox" class="nav__circle-checkbox">
-          <div class="nav__circle-background"></div>
-          <div class="nav__circle-line"></div>
-        </div>
-      </nav>
+  <main class="main">
+    <!-- Nav themes (entryView to themesView) -->
+    <nav class="nav__circle nav__circle--hidden">
+      <div class="nav__container">
+        <input type="checkbox" class="nav__circle-checkbox">
+        <div class="nav__circle-background"></div>
+        <div class="nav__circle-line"></div>
+      </div>
+    </nav>
 
-      <!-- Nav back (themesView to entryView) -->
-      <nav class="nav__back">
-        <span class="hidden">Go back</span>
-      </nav>
+    <!-- Nav back (themesView to entryView) -->
+    <nav class="nav__back">
+      <span class="hidden">Go back</span>
+    </nav>
 
-      <!-- Nav arrow (mainView to entryView) -->
-      <nav class="nav__arrow nav__arrow--hidden">
-        <img class="nav__arrow__icon" src="src/img/back-icon.svg">
-      </nav>
+    <!-- Nav arrow (mainView to entryView) -->
+    <nav class="nav__arrow nav__arrow--hidden">
+      <img class="nav__arrow__icon" src="src/img/back-icon.svg">
+    </nav>
 
-      <form class="search">
-        <h1 class="search__h1">Weather App</h1>
-        <div class="search__input">
-          <input type="name" name="city" placeholder="Enter city name" id="city-input" class="search__input-city" />
-          <button class="search__input__icon">
-            <img src="src/img/search-icon.svg">
-          </button>
-        </div>
-        <nav class="nav__link">See all possible themes</nav>
-      </form>
-
-
-      <form class="search-loaded search-loaded--hidden">
-        <div class="search__input">
-          <input class="search-loaded__input-city" type="name" name="city" placeholder="Enter city name"
-            id="city-input" />
-          <button class="search-loaded__input__icon">
-            <img src="src/img/search-icon.svg">
-          </button>
-        </div>
-      </form>
+    <form class="search">
+      <h1 class="search__h1">Weather App</h1>
+      <div class="search__input">
+        <input type="name" name="city" placeholder="Enter city name" id="city-input" class="search__input-city" />
+        <button class="search__input__icon">
+          <img src="src/img/search-icon.svg">
+        </button>
+      </div>
+      <nav class="nav__link">See all possible themes</nav>
+    </form>
 
 
+    <form class="search-loaded search-loaded--hidden">
+      <div class="search__input">
+        <input class="search-loaded__input-city" type="name" name="city" placeholder="Enter city name"
+          id="city-input" />
+        <button class="search-loaded__input__icon">
+          <img src="src/img/search-icon.svg">
+        </button>
+      </div>
+    </form>
 
-      <!-- Form for the theme -->
-      <form class="theme" action="#">
-        <div class="theme__box--left">
-          <h1 class="theme__box-h1" for="weather-select">Select weather theme</h1>
-
-          <input class="theme__box-input" type="radio" name="weather" value="sunny" id="sunny">
-          <label class="theme__box-label" for="sunny">Sunny</label>
 
 
-          <input class="theme__box-input" type="radio" name="weather" value="rainy" id="rainy">
-          <label class="theme__box-label" for="rainy">Rainy</label>
+    <!-- Form for the theme -->
+    <form class="theme" action="#">
+      <div class="theme__top">
+        <h1 class="theme__h1">Select weather and time</h1>
+        <h2 class="theme__h2">To see background variant</h2>
+      </div>
 
-          <input class="theme__box-input" type="radio" name="weather" value="snowy" id="snowy">
-          <label class="theme__box-label" for="snowy">Snowy</label>
+      <div class="theme__weather">
 
-          <input class="theme__box-input" type="radio" name="weather" value="thunder" id="thunder">
-          <label class="theme__box-label" for="thunder">Thunder</label>
+        <input class="theme__input" type="radio" name="weather" value="sunny" id="sunny">
+        <label class="theme__label" for="sunny">Sunny</label>
 
-          <input class="theme__box-input" type="radio" name="weather" value="clouds" id="clouds">
-          <label class="theme__box-label" for="clouds">Clouds</label>
 
-          <input class="theme__box-input" type="radio" name="weather" value="clouds-scattered" id="clouds-scattered">
-          <label class="theme__box-label" for="clouds-scattered">Scattered Clouds</label>
-        </div>
-        <div class="theme__box--right">
-          <h1 class="theme__box-h1" for="time-select">Select time</h1>
-          <input class="theme__box-input" type="radio" name="time" value="morning" id="morning">
-          <label class="theme__box-label" for="morning">Morning</label>
+        <input class="theme__input" type="radio" name="weather" value="rainy" id="rainy">
+        <label class="theme__label" for="rainy">Rainy</label>
 
-          <input class="theme__box-input" type="radio" name="time" value="day" id="day">
-          <label class="theme__box-label" for="day">Day</label>
+        <input class="theme__input" type="radio" name="weather" value="snowy" id="snowy">
+        <label class="theme__label" for="snowy">Snowy</label>
 
-          <input class="theme__box-input" type="radio" name="time" value="evening" id="evening">
-          <label class="theme__box-label" for="evening">Evening</label>
+        <input class="theme__input" type="radio" name="weather" value="thunder" id="thunder">
+        <label class="theme__label" for="thunder">Thunder</label>
 
-          <input class="theme__box-input" type="radio" name="time" value="night" id="night">
-          <label class="theme__box-label" for="night">Night</label>
-        </div>
+        <input class="theme__input" type="radio" name="weather" value="clouds" id="clouds">
+        <label class="theme__label" for="clouds">Clouds</label>
 
-        <input class="theme-submit" type="submit" value="Set theme">
-      </form>
+        <input class="theme__input" type="radio" name="weather" value="clouds-scattered" id="clouds-scattered">
+        <label class="theme__label" for="clouds-scattered">Scattered Clouds</label>
+      </div>
 
-      <section class="info__container info--hidden">
-        <div class="info__temperature">18&deg;</div>
-        <div class="info__city">Rome, Italy</div>
-        <div class="info__date">14 Sep 2022</div>
-        <div class="info__time">21:37</div>
+      <div class="theme__time">
+        <input class="theme__input" type="radio" name="time" value="morning" id="morning">
+        <label class="theme__label" for="morning">Morning</label>
 
-        <div class="info__weather">
-          <img class="info__weather__icon" src="src/img/time-icon.svg">
-          <p class="info__weather__text">Sunny</p>
-        </div>
-      </section </main>
+        <input class="theme__input" type="radio" name="time" value="day" id="day">
+        <label class="theme__label" for="day">Day</label>
+
+        <input class="theme__input" type="radio" name="time" value="evening" id="evening">
+        <label class="theme__label" for="evening">Evening</label>
+
+        <input class="theme__input" type="radio" name="time" value="night" id="night">
+        <label class="theme__label" for="night">Night</label>
+      </div>
+
+      <div class="theme__bottom">
+        <input class="theme__btn" type="submit" value="Set theme">
+      </div>
+    </form>
+
+    <section class="info__container info--hidden">
+      <div class="info__temperature">18&deg;</div>
+      <div class="info__city">Rome, Italy</div>
+      <div class="info__date">14 Sep 2022</div>
+      <div class="info__time">21:37</div>
+
+      <div class="info__weather">
+        <img class="info__weather__icon" src="src/img/time-icon.svg">
+        <p class="info__weather__text">Sunny</p>
+      </div>
+    </section>
+  </main>
 </body>
 
 </html>

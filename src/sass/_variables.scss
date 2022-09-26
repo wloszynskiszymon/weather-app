@@ -33,3 +33,25 @@
   --filter-grey: invert(68%) sepia(0%) saturate(1204%) hue-rotate(188deg)
     brightness(74%) contrast(84%);
 }
+
+/*
+Based on:
+  mobile -> 320px — 480px
+  tablet -> 481px — 768px
+  laptop -> 769px — 1024px 
+  desktop -> 1025px — 1200px
+
+  (x)px/16 = (x)em
+*/
+
+$bp-desktop: 75em; // 1200px
+
+$bp-laptop: 64em; // 1024px
+
+$bp-tablet: 48em; // 768px
+
+$bp-mobile: 30em; // 480px (mobile breakpoint)
+$bp-mobile-small: 25em; // 400px (mobile breakpoint)
+
+// Fixing 100vh problem making everything overlap
+$bp-height-fix: 700px;

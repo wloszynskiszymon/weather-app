@@ -33,8 +33,8 @@
 }
 
 .snow,
-.snow:after,
-.snow:before {
+.snow::after,
+.snow::before {
   content: "";
   position: absolute;
   top: -60vh;
@@ -45,19 +45,25 @@
   // Snow dots gradient
   @include bg-dots;
   background-size: 60vw 60vh;
+  animation: snow 1.5s linear infinite;
 
-  animation: snow 2s linear;
-  animation-iteration-count: infinite;
+  // @media only screen and (max-width: $bp-large) {
+  //   background-size: 100vw 60vh;
+  // }
 }
 
-.snow:after {
-  margin-left: -10vw;
-  opacity: 0.6;
-  filter: blur(2px);
-}
-
-.snow:before {
+.snow::before {
   margin-left: -20vw;
   opacity: 0.8;
   filter: blur(1px);
+  animation-duration: 8s;
+  animation-direction: reverse;
+}
+
+.snow::after {
+  margin-left: -10vw;
+  opacity: 0.6;
+  filter: blur(2px);
+  animation-duration: 8s;
+  animation-direction: reverse;
 }

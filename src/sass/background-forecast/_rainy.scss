@@ -1,12 +1,8 @@
 // Rain and thunder are here
 
 .thunder {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  @include full-screen-absolute;
+
   background-color: white;
   z-index: 15;
   animation: thunder 7s linear infinite;
@@ -48,39 +44,40 @@
 }
 
 .rain,
-.rain::after,
-.rain::before {
+.rain::before,
+.rain::after {
   content: "";
   position: absolute;
   top: -60vh;
   left: 0;
   right: 0;
   bottom: 0;
-  mask-image: linear-gradient(to bottom, transparent 8%, #000 20%);
-  background: radial-gradient(1px 30px at 100px 50px, #fff, transparent),
-    radial-gradient(1px 30px at 255px 100px, #fff, transparent),
-    radial-gradient(1px 30px at 535px 250px, #fff, transparent),
-    radial-gradient(1px 30px at 620px 530px, #fff, transparent),
-    radial-gradient(1px 30px at 190px 650px, #fff, transparent),
-    radial-gradient(1px 30px at 150px 120px, #fff, transparent),
-    radial-gradient(1px 30px at 400px 450px, #fff, transparent),
-    radial-gradient(1px 30px at 500px 480px, #fff, transparent),
-    radial-gradient(1px 30px at 630px 350px, #fff, transparent),
-    radial-gradient(1px 30px at 820px 170px, #fff, transparent);
+
+  // mask-image: linear-gradient(to bottom, transparent 10%, #000 20%);
+  @include bg-rain;
 
   background-size: 60vw 60vh;
+  animation: rain 1s linear infinite;
 
-  animation: rain 1.5s linear infinite;
+  // @media only screen and (max-width: $bp-large) {
+  //   background-size: 100vw 60vh;
+  // }
 }
 
-.rain:after {
-  margin-left: -10vw;
-  opacity: 0.6;
-  filter: blur(2px);
-}
-
-.rain:before {
+.snow::before,
+.rain::before {
   margin-left: -20vw;
   opacity: 0.8;
   filter: blur(1px);
+  animation-duration: 10s;
+  animation-direction: reverse;
+}
+
+.snow::after,
+.rain::after {
+  margin-left: -10vw;
+  opacity: 0.6;
+  filter: blur(2px);
+  animation-duration: 10s;
+  animation-direction: reverse;
 }
