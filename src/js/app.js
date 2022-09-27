@@ -86,4 +86,8 @@ navCricleCheckbox.addEventListener("change", () => {
   })
 );
 
+navCricleCheckbox.addEventListener("click", () => {
+  navBackSpan.classList.toggle("hidden");
+});
+
 // getJSON("Poznan");

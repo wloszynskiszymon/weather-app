@@ -2,7 +2,10 @@
 
 .theme {
   @include full-screen-absolute;
-  z-index: 950;
+  z-index: 905;
+
+  // Needed so this theme won't make nav unclickable
+  pointer-events: none;
 
   display: grid;
   grid-template-rows: minmax(15vh, 1fr) minmax(max-content, 3fr) 1fr;
@@ -51,7 +54,7 @@
     align-items: flex-end;
   }
 
-  &_timet {
+  &_time {
     grid-row: 2 / span 1;
     grid-column: 2 / span 1;
 
@@ -107,13 +110,9 @@
     display: block;
     cursor: pointer;
     overflow: hidden;
+    pointer-events: all;
 
     width: 45rem;
-
-    // @media only screen and (max-width: $bp-medium) {
-    //   width: 90%;
-    //   padding: 0.2rem;
-    // }
 
     font-size: 2rem;
     font-style: italic;
@@ -180,6 +179,8 @@
     width: 30rem;
     height: 5rem;
 
+    pointer-events: all;
+
     color: grey;
     font-size: 2rem;
     font-weight: 700;
@@ -213,12 +214,6 @@
       min-width: 30rem;
     }
   }
-
-  // @media only screen and (max-width: $bp-large) {
-  //   &__label {
-  //     width: 30rem;
-  //   }
-  // }
 
   @media only screen and (max-width: $bp-tablet) {
     gap: 0 5rem;
@@ -299,6 +294,16 @@
 
     &__btn {
       transform: translateY(-5rem);
+    }
+  }
+
+  @media only screen and (max-width: $bp-tablet) and (max-height: $bp-height-fix) {
+    &__h1 {
+      font-size: calc(2rem + 1.5vw);
+    }
+
+    &__h2 {
+      font-size: calc(0.9rem + 1.5vw);
     }
   }
 }
