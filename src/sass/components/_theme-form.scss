@@ -2,10 +2,8 @@
 
 .theme {
   @include full-screen-absolute;
-  z-index: 905;
 
-  // Needed so this theme won't make nav unclickable
-  pointer-events: none;
+  z-index: 905;
 
   display: grid;
   grid-template-rows: minmax(15vh, 1fr) minmax(max-content, 3fr) 1fr;
@@ -16,14 +14,13 @@
   align-items: center;
   justify-items: center;
 
-  overflow: hidden;
-  visibility: hidden;
-  opacity: 0;
+  overflow: auto;
 
-  transform: translateY(100rem);
-  transition: all 0.4s;
+  // Needed so this theme won't make nav unclickable
+  pointer-events: none;
 
-  // background-color: rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s 0.5s;
+
   text-align: center;
   text-transform: uppercase;
 
@@ -92,13 +89,6 @@
   &__h2 {
     font-size: 2.5rem;
     letter-spacing: 5px;
-  }
-
-  &--show {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    transition: all 0.4s 0.5s;
   }
 
   &__input {

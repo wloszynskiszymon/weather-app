@@ -1,14 +1,24 @@
 // Main sass file
-@import "mixins";
-@import "variables";
-@import "base";
-@import "nav";
-@import "info";
-@import "theme-form";
-@import "search-form";
+@import "./abstracts/mixins";
+@import "./abstracts/functions";
+@import "./abstracts/variables";
+@import "./abstracts/helpers";
+@import "./abstracts/animations";
 
-@import "animations";
-@import "./background-forecast/rainy";
-@import "./background-forecast/snowy";
-@import "./background-forecast/sunny";
-@import "./background-forecast/cloudy";
+@import "./topography/base";
+@import "./components/nav";
+@import "./components/info";
+@import "./components/theme-form";
+@import "./components/search-form";
+
+@import "./backgrounds/entry";
+@import "./backgrounds/sunny";
+@import "./backgrounds/cloudy";
+@import "./backgrounds/scattered-cloudy";
+@import "./backgrounds/rainy";
+@import "./backgrounds/snowy";
+
+@import "./background-addons/snow";
+@import "./background-addons/rain";
+@import "./background-addons/thunder";
+@import "./background-addons/clouds";

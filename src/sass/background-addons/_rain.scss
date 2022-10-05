@@ -1,0 +1,45 @@
+.rain--morning,
+.rain--morning::before,
+.rain--morning::after {
+  @include bg-rain("morning");
+}
+
+.rain--day,
+.rain--day::before,
+.rain--day::after {
+  @include bg-rain("day");
+}
+
+.rain--evening,
+.rain--evening::before,
+.rain--evening::after {
+  @include bg-rain("evening");
+}
+
+.rain--night,
+.rain--night::before,
+.rain--night::after {
+  @include bg-rain("night");
+}
+
+.rain--morning::before,
+.rain--day::before,
+.rain--evening::before,
+.rain--night::before {
+  margin-left: -20vw;
+  opacity: 0.8;
+  filter: blur(1px);
+  animation-duration: 10s;
+  animation-direction: reverse;
+}
+
+.rain--morning::after,
+.rain--day::after,
+.rain--evening::after,
+.rain--night::after {
+  margin-left: -10vw;
+  opacity: 0.6;
+  filter: blur(2px);
+  animation-duration: 10s;
+  animation-direction: reverse;
+}

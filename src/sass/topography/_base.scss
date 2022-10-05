@@ -7,7 +7,6 @@
 }
 
 html {
-  box-sizing: border-box;
   font-size: 62.5%;
   // font-size: 40%;
   color: white;
@@ -24,19 +23,18 @@ html {
 body {
   font-family: var(--font-primary);
   font-weight: 300;
-  line-height: 1.6;
+  box-sizing: border-box;
 }
 
 .main {
   @include full-screen-absolute;
+  @media only screen and (max-height: $bp-height-fix) {
+    height: $bp-height-fix;
+  }
 
   // display: grid;
   // grid-template-columns: repeat(12, 1fr);
   // grid-template-rows: repeat(10, 1fr);
-
-  @media only screen and (max-height: $bp-height-fix) {
-    height: $bp-height-fix;
-  }
 }
 
 .background {
@@ -44,12 +42,4 @@ body {
   @media only screen and (max-height: $bp-height-fix) {
     height: $bp-height-fix;
   }
-}
-
-.first-entry {
-  background: linear-gradient(to bottom, #5064db, #132cbc);
-}
-
-.hidden {
-  display: none;
 }

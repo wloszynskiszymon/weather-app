@@ -1,0 +1,69 @@
+// Here you can find clouds for rainy and snowy themes.
+// Clouds for cloudy theme are in _cloudy.scss
+.rainy,
+.snowy {
+  &-morning::before,
+  &-day::before,
+  &-evening::before,
+  &-night::before {
+    @include full-screen-absolute;
+
+    animation: clouds-movement 80s linear infinite;
+    background-image: url(../img/clouds-rain.png);
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
+    z-index: 10;
+  }
+}
+
+.snowy {
+  &-morning {
+    &::before {
+      filter: $filter-snowy-morning;
+    }
+  }
+
+  &-day {
+    &::before {
+      filter: $filter-snowy-day;
+    }
+  }
+
+  &-evening {
+    &::before {
+      filter: $filter-snowy-evening;
+    }
+  }
+
+  &-night {
+    &::before {
+      filter: $filter-snowy-night;
+    }
+  }
+}
+
+.rainy {
+  &-morning {
+    &::before {
+      filter: $filter-rainy-morning;
+    }
+  }
+
+  &-day {
+    &::before {
+      filter: $filter-rainy-day;
+    }
+  }
+
+  &-evening {
+    &::before {
+      filter: $filter-rainy-evening;
+    }
+  }
+
+  &-night {
+    &::before {
+      filter: $filter-rainy-night;
+    }
+  }
+}

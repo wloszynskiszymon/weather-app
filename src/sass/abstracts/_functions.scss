@@ -1,0 +1,13 @@
+@function getColorForPrecipitations($time) {
+  @if $time == "morning" {
+    @return rgb(128, 140, 124);
+  } @else if $time == "day" {
+    @return rgb(174, 186, 210);
+  } @else if $time == "evening" {
+    @return rgb(164, 108, 79);
+  } @else if $time == "night" {
+    @return rgb(86, 91, 118);
+  } @else {
+    @return -1;
+  }
+}

@@ -1,0 +1,98 @@
+/*
+==========================================================
+                    CSS VARIABLES
+==========================================================
+                  
+*/
+:root {
+  --font-primary: "Quicksand", sans-serif;
+
+  // filter colors
+  --filter-grey: invert(68%) sepia(0%) saturate(1204%) hue-rotate(188deg)
+    brightness(74%) contrast(84%);
+
+  // --color-day: 255, 255, 255;
+  // --alpha-day: 0.05;
+
+  // --color-night: #000;
+  // --alpha-night: 0.1;
+
+  // --info-bg: rgba(var(--color-day), var(--alpha-day));
+
+  --info-bg: rgba(255, 255, 255, 0.05);
+}
+
+/*
+==========================================================
+                      FILTERS
+==========================================================
+                  
+*/
+$filter-grey: invert(68%) sepia(0%) saturate(1204%) hue-rotate(188deg)
+  brightness(74%) contrast(84%);
+
+$filter-white: invert(100%) sepia(0%) saturate(0%) hue-rotate(43deg)
+  brightness(110%) contrast(101%);
+
+// Cloudy theme
+$filter-cloudy-morning: invert(83%) sepia(25%) saturate(262%) hue-rotate(8deg)
+  brightness(248%) contrast(80%);
+
+$filter-cloudy-day: brightness(80%);
+
+$filter-cloudy-evening: invert(66%) sepia(30%) saturate(774%) hue-rotate(329deg)
+  brightness(127%) contrast(87%);
+
+$filter-cloudy-night: brightness(0) saturate(100%) invert(10%) sepia(25%)
+  saturate(3221%) hue-rotate(209deg) brightness(65%) contrast(105%);
+
+// Snowy theme
+$filter-snowy-morning: invert(83%) sepia(25%) saturate(252%) hue-rotate(8deg)
+  brightness(338%) contrast(80%);
+
+$filter-snowy-day: brightness(80%);
+
+$filter-snowy-evening: invert(76%) sepia(20%) saturate(574%) hue-rotate(329deg)
+  brightness(197%) contrast(87%);
+
+$filter-snowy-night: invert(5%) sepia(15%) saturate(2547%) hue-rotate(121deg)
+  brightness(35%) contrast(103%);
+
+// Rainy theme
+$filter-rainy-morning: invert(77%) sepia(35%) saturate(252%) hue-rotate(25deg)
+  brightness(218%) contrast(95%);
+
+$filter-rainy-day: brightness(80%);
+
+$filter-rainy-evening: invert(76%) sepia(20%) saturate(574%) hue-rotate(329deg)
+  brightness(197%) contrast(87%);
+
+$filter-rainy-night: invert(5%) sepia(25%) saturate(3547%) hue-rotate(141deg)
+  brightness(20%) contrast(63%);
+
+/*
+==========================================================
+                    FOR MEDIA QUEREIS
+==========================================================
+
+
+Based on:
+  mobile -> 320px — 480px
+  tablet -> 481px — 768px
+  laptop -> 769px — 1024px 
+  desktop -> 1025px — 1200px
+
+  (x)px/16 = (x)em
+*/
+
+$bp-desktop: 75em; // 1200px
+
+$bp-laptop: 64em; // 1024px
+
+$bp-tablet: 48em; // 768px
+
+$bp-mobile: 30em; // 480px
+$bp-mobile-small: 25em; // 400px
+
+// Fixing 100vh problem to prevent everything from overlap
+$bp-height-fix: 700px;

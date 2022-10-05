@@ -1,0 +1,33 @@
+.snowy {
+  &-morning {
+    background: radial-gradient(
+      farthest-corner at -30vw 140vh,
+      #f49f0e 5%,
+      #15678d 60%
+    );
+  }
+
+  &-day {
+    background: radial-gradient(
+      farthest-corner at 50vw -50vh,
+      #51b5b8 25%,
+      #077a89 90%
+    );
+  }
+
+  &-evening {
+    background: radial-gradient(
+      farthest-corner at 100vw 100vh,
+      #674812 5%,
+      #183e55 40%
+    );
+  }
+
+  &-night {
+    background: radial-gradient(
+      farthest-corner at 50vw -50vh,
+      #04374d 25%,
+      #011021 90%
+    );
+  }
+}

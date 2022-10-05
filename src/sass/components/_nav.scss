@@ -9,16 +9,7 @@
     height: 7rem;
     z-index: 900;
 
-    // @media only screen and (max-width: $bp-medium) {
-    //   right: 1.75rem;
-    //   top: 1.75rem;
-    // }
-
-    // Hide animation
-    &--hidden {
-      visibility: hidden;
-      transform: translateX(10vw);
-    }
+    transition: transform 0.4s;
 
     // Invisible checkbox defining wheter it was clicked or not
     &-checkbox {
@@ -114,7 +105,11 @@
     align-items: center;
     margin-top: 10rem;
 
+    position: relative;
+    z-index: 100;
+
     span {
+      transition: 0.2s;
       cursor: pointer;
       text-align: center;
       font-size: 3rem;
@@ -132,7 +127,7 @@
     height: 7rem;
     z-index: 900;
     transition: 0.5s all;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--info-bg);
     display: flex;
     justify-content: center;
     align-content: center;
@@ -148,13 +143,8 @@
       width: 60%;
       height: 100%;
 
-      filter: var(--filter-grey);
+      filter: $filter-white;
     }
-
-    // &--hidden {
-    //   visibility: hidden;
-    //   transform: translateX(10vw);
-    // }
   }
 
   // Nav from entry view to themes view "See all possible themes"

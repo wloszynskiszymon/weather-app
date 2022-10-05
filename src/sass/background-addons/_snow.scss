@@ -1,0 +1,45 @@
+.snow--morning,
+.snow--morning::before,
+.snow--morning::after {
+  @include bg-dots("snow", "morning");
+}
+
+.snow--day,
+.snow--day::before,
+.snow--day::after {
+  @include bg-dots("snow", "day");
+}
+
+.snow--evening,
+.snow--evening::before,
+.snow--evening::after {
+  @include bg-dots("snow", "evening");
+}
+
+.snow--night,
+.snow--night::before,
+.snow--night::after {
+  @include bg-dots("snow", "night");
+}
+
+.snow--morning::before,
+.snow--day::before,
+.snow--evening::before,
+.snow--night::before {
+  margin-left: -10vw;
+  opacity: 0.6;
+  filter: blur(2px);
+  animation-duration: 8s;
+  animation-direction: reverse;
+}
+
+.snow--morning::after,
+.snow--day::after,
+.snow--evening::after,
+.snow--night::after {
+  margin-left: -20vw;
+  opacity: 0.8;
+  filter: blur(1px);
+  animation-duration: 8s;
+  animation-direction: reverse;
+}

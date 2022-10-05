@@ -1,5 +1,6 @@
 import { getJSON } from "./requestAPI";
 // Needed for nav to work
+const main = document.querySelector(".main");
 const navCircle = document.querySelector(".nav__circle");
 const navCricleCheckbox = document.querySelector(".nav__circle-checkbox");
 const navArrow = document.querySelector(".nav__arrow");
@@ -21,8 +22,8 @@ const precipitationBg = document.querySelector("#precipitation-fall");
 
 const state = {
   background: "first-entry",
-  weather: "sunny",
-  timeOfDay: "evening",
+  weather: "cloudy",
+  timeOfDay: "morning",
   isPrecipitation: true,
   precipitation: "snow",
   loadedCity: "false",
@@ -30,10 +31,12 @@ const state = {
 };
 
 const changeView = function () {
-  searchForm.classList.toggle("search--hidden");
-  navArrow.classList.toggle("nav__arrow--hidden");
-  searchLoadedForm.classList.toggle("search-loaded--hidden");
-  weatherInfo.classList.toggle("info--hidden");
+  searchForm.classList.toggle("hidden");
+  navArrow.classList.toggle("hidden--left");
+  searchLoadedForm.classList.toggle("hidden--top");
+  weatherInfo.classList.toggle("hidden--bottom");
+  main.classList.toggle("disable-scroll");
+  background.classList.toggle("disable-scroll");
 
   if (state.loadedCity) {
     background.classList.remove(state.background);
@@ -45,9 +48,6 @@ const changeView = function () {
     state.background = "first-entry";
     background.classList.add(state.background);
     state.loadedCity = !state.loadedCity;
-    if (state.isPrecipitation) {
-      precipitationBg.classList.remove(state.precipitation);
-    }
   }
 };
 
@@ -68,26 +68,22 @@ searchLoadedForm.addEventListener("submit", (e) => {
 navArrow.addEventListener("click", changeView);
 
 // "See all possible themes"
-navCricleCheckbox.addEventListener("change", () => {
-  if (!state.themeNavOpened) {
-    themeForm.classList.toggle("theme--show");
-    state.themeNavOpened = true;
-  } else {
-    themeForm.classList.toggle("theme--show");
-    state.themeNavOpened = false;
-  }
+navCricleCheckbox.addEventListener("click", () => {
+  themeForm.classList.toggle("hidden--bottom--theme");
 });
 
 [navLink, navBackSpan].forEach((el) =>
   el.addEventListener("click", () => {
-    navCircle.classList.toggle("nav__circle--hidden");
-    searchForm.classList.toggle("search--hidden");
+    navCircle.classList.toggle("hidden--right");
+    searchForm.classList.toggle("hidden");
     navBackSpan.classList.toggle("hidden");
+    navArrow.classList.toggle("hidden--left");
   })
 );
 
 navCricleCheckbox.addEventListener("click", () => {
   navBackSpan.classList.toggle("hidden");
+  navArrow.classList.toggle("hidden--left");
 });
 
 // getJSON("Poznan");

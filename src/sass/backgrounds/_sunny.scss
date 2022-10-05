@@ -3,15 +3,16 @@
   &-day::before,
   &-night::before {
     @include full-screen-absolute;
+    @include sun-moon-day-fix;
 
     animation: night-shine 3s linear infinite;
     transition: all 1s;
     background-image: url(../img/sun-day.png);
     background-repeat: no-repeat;
-    @include sun-moon-day-fix;
 
     z-index: 5;
     transform: scale(2);
+
     transform-origin: center center;
   }
 
@@ -25,10 +26,20 @@
 
   &-day {
     background: radial-gradient(
-      farthest-corner at 40vw -100vh,
+      farthest-corner at 50vw -100vh,
       #d9ff00 20%,
       #6598ff 70%
     );
+
+    @media only screen and (max-width: $bp-mobile) {
+      & {
+        background: radial-gradient(
+          farthest-corner at 50vw -100vh,
+          #d9ff00 30%,
+          #6598ff 50%
+        );
+      }
+    }
   }
 
   &-evening {
@@ -46,8 +57,21 @@
       #060221 60%
     );
 
+    @media only screen and (max-width: $bp-mobile) {
+      & {
+        background: radial-gradient(
+          farthest-corner at 50vw -90vh,
+          #7c96c6 20%,
+          #060221 50%
+        );
+      }
+    }
+
     &::before {
       background-image: url(../img/moon.png);
+      @media only screen and (max-width: $bp-mobile) {
+        transform: scale(1.4);
+      }
     }
 
     &::after {

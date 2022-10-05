@@ -1,0 +1,88 @@
+// possible arguments: "snow", "stars"
+@mixin bg-dots($type: "stars", $time: null) {
+  $color: #fff;
+  @if $type == "snow" {
+    $color: getColorForPrecipitations($time);
+  }
+
+  background: radial-gradient(4px 4px at 15rem 24rem, $color, transparent),
+    radial-gradient(4px 4px at 10rem 5rem, $color, transparent),
+    radial-gradient(6px 6px at 34rem 3rem, $color, transparent),
+    radial-gradient(7px 7px at 36rem 14rem, $color, transparent),
+    radial-gradient(3px 3px at 62rem 53rem, $color, transparent),
+    radial-gradient(5px 5px at 19rem 65rem, $color, transparent),
+    radial-gradient(2px 2px at 15rem 42rem, $color, transparent),
+    radial-gradient(6px 6px at 45rem 45rem, $color, transparent),
+    radial-gradient(4px 4px at 50rem 48rem, $color, transparent),
+    radial-gradient(3px 3px at 63rem 35rem, $color, transparent),
+    radial-gradient(4px 4px at 70rem 25rem, $color, transparent),
+    radial-gradient(4px 4px at 55rem 42rem, $color, transparent),
+    radial-gradient(3px 3px at 66rem 38rem, $color, transparent),
+    radial-gradient(4px 4px at 90rem 22rem, $color, transparent),
+    radial-gradient(5px 5px at 80rem 15rem, $color, transparent);
+  // For snow type of background
+  @if $type == "snow" {
+    content: "";
+    position: absolute;
+    top: -60vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-size: 60vw 60vh;
+    animation: snow 1.5s linear infinite;
+
+    @media only screen and (max-width: $bp-mobile) {
+      background-size: 100vw 60vh;
+    }
+  }
+}
+
+// possible arguemnts: "morning, "day", "evening, "night"
+@mixin bg-rain($time) {
+  $color: getColorForPrecipitations($time);
+
+  content: "";
+  position: absolute;
+  top: -60vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: radial-gradient(1px 30px at 10rem 5rem, $color, transparent),
+    radial-gradient(1px 21px at 25rem 10rem, $color, transparent),
+    radial-gradient(1px 24px at 53rem 25rem, $color, transparent),
+    radial-gradient(1px 26px at 62rem 53rem, $color, transparent),
+    radial-gradient(1px 18px at 19rem 65rem, $color, transparent),
+    radial-gradient(1px 28px at 15rem 12rem, $color, transparent),
+    radial-gradient(1px 30px at 40rem 45rem, $color, transparent),
+    radial-gradient(1px 27px at 50rem 48rem, $color, transparent),
+    radial-gradient(1px 22px at 63rem 35rem, $color, transparent),
+    radial-gradient(1px 19px at 82rem 17rem, $color, transparent);
+
+  background-size: 60vw 60vh;
+  animation: rain 1s linear infinite;
+
+  @media only screen and (max-width: $bp-mobile) {
+    background-size: 100vw 60vh;
+  }
+}
+
+@mixin sun-moon-day-fix {
+  top: 0;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  margin-top: -250px; /* Half the height */
+  margin-left: -250px; /* Half the width */
+}
+
+@mixin full-screen-absolute {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}

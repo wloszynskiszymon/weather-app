@@ -1,0 +1,46 @@
+// Cloudy has background equal to rainy one. (Located under _rainy.scss)
+// Rainy and snowy clouds included here
+// https://codepen.io/sosuke/pen/Pjoqqp -> used for generating filter to apply color to clouds
+.cloudy {
+  &-morning::before,
+  &-day::before,
+  &-evening::before,
+  &-night::before {
+    @include full-screen-absolute;
+
+    background-image: url(../img/cloudy-sky.png);
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
+
+    @media only screen and (max-width: $bp-tablet) {
+      background-size: 200% 100%;
+    }
+
+    animation: clouds-movement 40s linear infinite;
+    z-index: 10;
+  }
+
+  &-morning {
+    &::before {
+      filter: $filter-cloudy-morning;
+    }
+  }
+
+  &-day {
+    &::before {
+      filter: $filter-cloudy-day;
+    }
+  }
+
+  &-evening {
+    &::before {
+      filter: $filter-cloudy-evening;
+    }
+  }
+
+  &-night {
+    &::before {
+      filter: $filter-cloudy-night;
+    }
+  }
+}

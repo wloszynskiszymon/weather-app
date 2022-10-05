@@ -1,0 +1,7 @@
+.thunder {
+  @include full-screen-absolute;
+
+  background-color: #fff;
+  z-index: 15;
+  animation: thunder 7s linear infinite;
+}
