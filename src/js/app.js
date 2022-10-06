@@ -19,7 +19,6 @@ const background = document.querySelector("#background");
 const precipitationBg = document.querySelector("#precipitation-fall");
 
 // Search
-
 const state = {
   background: "first-entry",
   weather: "cloudy",
