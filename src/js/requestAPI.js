@@ -8,17 +8,15 @@ const timeout = function (s) {
   });
 };
 
-const createWeatherAPICall = function (city) {
-  return `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5614087c1b4e3b8884b8ec32fd8a2151&units=metric`;
-};
-
 export const getJSON = async function (city) {
   try {
-    const apiCall = createWeatherAPICall(city);
+    const apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
     const res = await Promise.race([fetch(apiCall), timeout(5)]);
+    if (!res.ok) throw new Error(`Something went wrong, ${res.statusText}`);
     const data = await res.json();
-    console.log(data);
+
+    return data;
   } catch (e) {
-    throw new Error(e);
+    throw new Error(`Ops! ${e}`);
   }
 };

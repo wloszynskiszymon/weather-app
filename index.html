@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="src/sass/main.scss" />
-  <script defer type="module" src="src/js/app.js"></script>
+  <script defer type="module" src="src/js/controller.js"></script>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
     </nav>
 
     <!-- Nav back (themesView to entryView) -->
-    <nav class="nav__back">
+    <nav class="nav__back hidden">
       <span class="hidden">Go back</span>
     </nav>
 
@@ -42,7 +42,7 @@
       <img class="nav__arrow__icon" src="src/img/back-icon.svg">
     </nav>
 
-    <form class="search">
+    <form class="search hidden">
       <h1 class="search__h1">Weather App</h1>
       <div class="search__input">
         <input class="search__input-city" type="name" name="query" placeholder="Enter city name" id="city-input" />
@@ -115,7 +115,7 @@
 
         <div class="info__container--left">
           <div class="info__cell info__temperature">
-            <p id="info-temperature">18&deg;</p>
+            <p><span id="info-temperature">18</span>&deg;</p>
           </div>
           <div class="info__cell info__location">
             <p id="info-location">Antanarivo</p>
@@ -136,17 +136,17 @@
 
           <div class="info__weather__cell info__weather__wind">
             <img class="info__weather__icon" src="src/img/wind-icon.svg">
-            <p id="info-wind">8 km/h</p>
+            <p><span id="info-wind">8</span> km/h</p>
           </div>
 
           <div class="info__weather__cell info__weather__pressure">
             <img class="info__weather__icon" src="src/img/pressure-icon.svg">
-            <p id="info-pressure">1003 hPa</p>
+            <p><span id="info-pressure">1003</span> hPa</p>
           </div>
 
           <div class="info__weather__cell info__weather__humidity">
             <img class="info__weather__icon" src="src/img/humidity-icon.svg">
-            <p id="info-humidity">64%</p>
+            <p><span id="info-humidity">64</span>%</p>
           </div>
 
           <div class="info__weather__cell info__weather__sunrise">

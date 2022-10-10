@@ -3,11 +3,10 @@ import { getJSON } from "./requestAPI";
 const main = document.querySelector(".main");
 const navCircle = document.querySelector(".nav__circle");
 const navCricleCheckbox = document.querySelector(".nav__circle-checkbox");
-const navArrow = document.querySelector(".nav__arrow");
 const themeForm = document.querySelector(".theme");
+
 const searchForm = document.querySelector(".search");
 const searchLoadedForm = document.querySelector(".search-loaded");
-const weatherInfo = document.querySelector(".info__container");
 
 // That's "See all possible themes" paragraph
 const searchCityIcon = document.querySelector(".search__input__icon");
