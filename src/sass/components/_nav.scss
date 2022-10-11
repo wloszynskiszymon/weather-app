@@ -134,10 +134,6 @@
     overflow: hidden;
     cursor: pointer;
 
-    &--hidden {
-      transform: translateX(-20vw);
-    }
-
     &__icon {
       z-index: 1000;
       width: 60%;
@@ -150,7 +146,7 @@
   // Nav from entry view to themes view "See all possible themes"
   &__link {
     all: unset;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: lightgrey;
     text-decoration: underline;
     cursor: pointer;

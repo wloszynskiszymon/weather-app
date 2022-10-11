@@ -2,25 +2,33 @@ import "../model.js";
 
 class EntryView {
   _searchForm = document.querySelector(".search");
+  _searchInput = document.querySelector(".search__input-city");
+  _navLink = document.querySelector(".nav__link");
 
-  constructor() {}
-
-  toggleWindow() {
-    this._searchForm.classList.toggle("hidden");
+  constructor() {
+    this.showEntryView();
   }
 
-  loadEntryView() {
+  showEntryView() {
     this._searchForm.classList.remove("hidden");
-    console.log("loadEntryView() - works!");
+  }
+
+  hideEntryView() {
+    this._searchForm.classList.add("hidden");
   }
 
   addHandlerSubmit(handler) {
     this._searchForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      this.toggleWindow();
-      const data = document.querySelector(".search__input-city").value;
+      const data = this._searchInput.value;
+      if (!data) return;
+      this._searchInput.value = "";
       handler(data);
     });
+  }
+
+  addHandlerLinkClick(handler) {
+    this._navLink.addEventListener("click", handler);
   }
 }
 

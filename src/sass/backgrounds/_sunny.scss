@@ -6,7 +6,6 @@
     @include sun-moon-day-fix;
 
     animation: night-shine 3s linear infinite;
-    transition: all 1s;
     background-image: url(../img/sun-day.png);
     background-repeat: no-repeat;
 

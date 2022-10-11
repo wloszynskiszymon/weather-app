@@ -17,12 +17,6 @@
 
   z-index: 100;
 
-  &--hidden {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.7);
-    transform-origin: center center;
-  }
-
   &-loaded__input,
   &__input {
     display: flex;

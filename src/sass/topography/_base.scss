@@ -37,7 +37,7 @@ body {
   // grid-template-rows: repeat(10, 1fr);
 }
 
-.background {
+#background {
   @include full-screen-absolute;
   @media only screen and (max-height: $bp-height-fix) {
     height: $bp-height-fix;

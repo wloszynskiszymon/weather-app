@@ -1,4 +1,4 @@
-const API_KEY = "5614087c1b4e3b8884b8ec32fd8a2151";
+import { API_KEY } from "./helpers.js";
 
 const timeout = function (s) {
   return new Promise(function (_, reject) {
