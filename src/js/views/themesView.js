@@ -1,9 +1,12 @@
+import background from "../backgrounds/background.js";
+
 class ThemesView {
   _navArrow = document.querySelector(".nav__arrow");
   _navCircle = document.querySelector(".nav__circle");
   _navCricleCheckbox = document.querySelector(".nav__circle-checkbox");
   _themeForm = document.querySelector(".theme");
-  //   document.getElementById("myCheck").checked = true;
+
+  _formData = {};
 
   constructor() {
     this._addHandlerOpenForm();
@@ -14,8 +17,20 @@ class ThemesView {
       e.preventDefault();
       this._navCricleCheckbox.checked = false;
       this._toggleThemesForm();
-      console.log("Success");
-      handler();
+
+      this._formData = {
+        weatherRadioButtonValue: document.querySelector(
+          '.theme__input[name="weather"]:checked'
+        ).value,
+        timeRadioButtonValue: document.querySelector(
+          '.theme__input[name="time"]:checked'
+        ).value,
+      };
+
+      handler(
+        this._formData.weatherRadioButtonValue,
+        this._formData.timeRadioButtonValue
+      );
     });
   }
 

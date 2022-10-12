@@ -15,15 +15,18 @@ export const state = {
     precipitation: "snow--morning",
     thunder: false,
   },
+
+  themeForm: {},
+
   currentView: "entryView",
-  previousView: "",
-  themeNavOpened: false,
 };
 
 export const createForecastObject = function (data) {
   const calcTime = function (time) {
     return (time + data.timezone + getTimezone()) * 1000;
   };
+
+  console.log(data);
 
   const getTimezone = function () {
     const date = new Date();
@@ -52,6 +55,15 @@ export const createForecastObject = function (data) {
     TIME_FORMAT
   );
 
+  let _weather;
+
+  if (data.weather[0].id === 801 || data.weather[0].id == 802) {
+    _weather = data.weather[0].description;
+    _weather = _weather.charAt(0).toUpperCase() + _weather.slice(1);
+  } else {
+    _weather = data.weather[0].main;
+  }
+
   return {
     temperature: Math.round(data.main.temp),
     location: data.name,
@@ -65,16 +77,19 @@ export const createForecastObject = function (data) {
     sunrise: _sunrise,
     sunset: _sunset,
     weatherID: data.weather[0].id,
-    weather: data.weather[0].main,
+    weather: _weather,
     icon: data.weather[0].icon,
   };
 };
 
 export const updateViewState = function (view) {
-  state.previousView = state.currentView;
   state.currentView = view;
 };
 
 export const updateBackground = function (background) {
   state.background = background;
+};
+
+export const saveThemeFormData = function (data) {
+  state.themeForm = data;
 };

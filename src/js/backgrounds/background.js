@@ -29,22 +29,26 @@ class Background {
     snowy: "snowy",
   };
 
-  renderThunder() {
-    this._thunder.classList.add("thunder");
-  }
-
-  renderPrecipitation(state) {
-    this._precipitation.classList.add(state.background.precipitation);
-  }
-
   renderBackground(state) {
+    this.clearBackgrounds();
+
+    state.background.thunder && this._thunder.classList.add("thunder");
+
+    state.background.isPrecipitation &&
+      this._precipitation.classList.add(state.background.precipitation);
+
     this._background.classList.add(state.background.background);
   }
 
-  clearBackgrounds() {
+  clearBackgrounds(showEntryView = false) {
     [this._thunder, this._precipitation, this._background].forEach((bg) => {
       bg.removeAttribute("class");
     });
+    if (showEntryView) this._background.classList.add("first-entry");
+  }
+
+  _getBackgroundObject() {
+    return this._backgroundObject;
   }
 
   /* 
@@ -136,11 +140,13 @@ class Background {
     return false;
   }
 
-  _validatePrecipitation(state) {
+  _validatePrecipitation() {
     if (this._backgroundObject.weather === "rainy") {
+      this._backgroundObject.isPrecipitation = true;
       this._backgroundObject.precipitation = `rain--${this._backgroundObject.time}`;
       return true;
-    } else if (precipitation === "snowy") {
+    } else if (this._backgroundObject.weather === "snowy") {
+      this._backgroundObject.isPrecipitation = true;
       this._backgroundObject.precipitation = `snow--${this._backgroundObject.time}`;
       return true;
     } else {
@@ -148,33 +154,42 @@ class Background {
     }
   }
 
-  _setBackgroundInObject() {
-    this._backgroundObject.background = `${this._backgroundObject.weather}-${this._backgroundObject.time}`;
+  validateFormData(weatherRadioButtonValue, timeRadioButtonValue) {
+    this._backgroundObject.isPrecipitation = false;
+    this._backgroundObject.precipitation = "";
+    this._backgroundObject.thunder = false;
+
+    if (weatherRadioButtonValue === "thunder") {
+      this._backgroundObject.isPrecipitation = true;
+      this._backgroundObject.weather = "rainy";
+      this._backgroundObject.precipitation = `rain--${timeRadioButtonValue}`;
+      this._backgroundObject.thunder = true;
+    } else {
+      this._backgroundObject.weather = weatherRadioButtonValue;
+    }
+    this._backgroundObject.time = timeRadioButtonValue;
+
+    this._setBackgroundInObject();
+
+    this._validatePrecipitation();
+
+    return this._getBackgroundObject();
   }
 
-  getBackgroundObject(state, doValidation = true) {
-    if (doValidation) {
-      if (this._validateWeather(state)) {
-        if (this._validateTime(state)) {
-          this._setBackgroundInObject();
-          if (this._backgroundObject.isPrecipitation) {
-            this._validatePrecipitation(state);
-          }
-          return this._backgroundObject;
-        }
-      }
+  validateForecastData(state) {
+    // Validate and set first data
+    this._validateWeather(state) &&
+      this._validateTime(state) &&
+      this._setBackgroundInObject();
 
-      //   return {
-      //     background: this.generateBackground(weather, time),
-      //     weather: weather,
-      //     time: time,
-      //     isPrecipitation: true,
-      //     precipitation: "snow--morning",
-      //     thunder: false,
-      //   };
-    }
+    // If it rains or snows then set proper values
+    this._backgroundObject.isPrecipitation && this._validatePrecipitation();
 
-    // background = `${this.generateBackground(this.validateWeather, "morning")}`;
+    return this._getBackgroundObject();
+  }
+
+  _setBackgroundInObject() {
+    this._backgroundObject.background = `${this._backgroundObject.weather}-${this._backgroundObject.time}`;
   }
 }
 

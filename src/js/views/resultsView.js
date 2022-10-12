@@ -4,6 +4,7 @@ class ResultsView {
   _data;
   _background = document.querySelector("#background");
 
+  // http://openweathermap.org/img/wn/10d@2x.png
   _navArrow = document.querySelector(".nav__arrow");
   _weatherInfo = document.querySelector(".info__container");
   _searchLoadedForm = document.querySelector(".search-loaded");
@@ -15,7 +16,9 @@ class ResultsView {
   _date = document.querySelector("#info-date");
   _time = document.querySelector("#info-time");
   _timezone = document.querySelector("#info-timezone");
+  _timepart = document.querySelector("#info-time-part");
 
+  _weatherIcon = document.querySelector("#info-weather-icon");
   _weather = document.querySelector("#info-weather");
   _pressure = document.querySelector("#info-pressure");
   _humidity = document.querySelector("#info-humidity");
@@ -37,21 +40,22 @@ class ResultsView {
     this._navArrow.addEventListener("click", handler);
   }
 
-  renderData(data) {
-    this._temperature.textContent = data.forecast.temperature;
-    this._location.textContent = data.forecast.location;
-    this._country.textContent = data.forecast.country;
-    this._date.textContent = data.forecast.date;
-    this._time.textContent = data.forecast.time;
-    this._timezone.textContent = data.forecast.timezone;
+  renderData(state) {
+    this._temperature.textContent = state.forecast.temperature;
+    this._location.textContent = state.forecast.location;
+    this._country.textContent = state.forecast.country;
+    this._date.textContent = state.forecast.date;
+    this._time.textContent = state.forecast.time;
+    this._timezone.textContent = state.forecast.timezone;
+    this._timepart.textContent = state.background.time;
 
-    this._weather.textContent = data.forecast.weather;
-    this._pressure.textContent = data.forecast.pressure;
-    this._humidity.textContent = data.forecast.humidity;
-    this._wind.textContent = data.forecast.wind;
-    this._sunrise.textContent = data.forecast.sunrise;
-    this._sunset.textContent = data.forecast.sunset;
-    console.log("Updated info");
+    this._weatherIcon.src = `http://openweathermap.org/img/wn/${state.forecast.icon}@2x.png`;
+    this._weather.textContent = state.forecast.weather;
+    this._pressure.textContent = state.forecast.pressure;
+    this._humidity.textContent = state.forecast.humidity;
+    this._wind.textContent = state.forecast.wind;
+    this._sunrise.textContent = state.forecast.sunrise;
+    this._sunset.textContent = state.forecast.sunset;
   }
 
   showResultsView() {
@@ -64,21 +68,6 @@ class ResultsView {
     this._weatherInfo.classList.add("hidden--bottom");
     this._navArrow.classList.add("hidden--left");
     this._searchLoadedForm.classList.add("hidden--top");
-  }
-
-  setBackground(state) {
-    console.log(state);
-    background.clearBackgrounds();
-
-    if (state.background.thunder) {
-      background.renderThunder();
-    }
-
-    if (state.background.isPrecipitation) {
-      background.renderPrecipitation(state);
-    }
-
-    background.renderBackground(state);
   }
 }
 

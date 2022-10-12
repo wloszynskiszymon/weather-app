@@ -73,14 +73,14 @@
         <input class="theme__input" type="radio" name="weather" value="snowy" id="snowy">
         <label class="theme__label" for="snowy">Snowy</label>
 
-        <input class="theme__input" type="radio" name="weather" value="thunder" id="thunder">
-        <label class="theme__label" for="thunder">Thunder</label>
+        <input class="theme__input" type="radio" name="weather" value="thunder" id="thunderstorm">
+        <label class="theme__label" for="thunderstorm">Thunder</label>
 
-        <input class="theme__input" type="radio" name="weather" value="clouds" id="clouds">
-        <label class="theme__label" for="clouds">Clouds</label>
+        <input class="theme__input" type="radio" name="weather" value="cloudy" id="cloudy">
+        <label class="theme__label" for="cloudy">Clouds</label>
 
-        <input class="theme__input" type="radio" name="weather" value="clouds-scattered" id="clouds-scattered">
-        <label class="theme__label" for="clouds-scattered">Scattered Clouds</label>
+        <input class="theme__input" type="radio" name="weather" value="cloudy-scattered" id="cloudy-scattered">
+        <label class="theme__label" for="cloudy-scattered">Scattered Clouds</label>
       </div>
 
       <div class="theme__time">
@@ -125,13 +125,17 @@
             <p id="info-date">14 Sep 2022</p>
           </div>
           <div class="info__cell info__time">
-            <p><span id="info-time">21:37</span><sup id="info-timezone">(+7)</sup></sup></p>
+            <p><span id="info-time">21:37</span><sup id="info-timezone">(+7)</sup></p>
+          </div>
+
+          <div class="info__cell info__time-part">
+            <p><span id="info-time-part">Morning</span></p>
           </div>
         </div>
 
         <div class="info__container--right">
           <div class="info__weather__cell info__weather__weather">
-            <img class="info__weather__icon" src="src/img/weather-icon.svg">
+            <img id="info-weather-icon" class="info__weather__icon" src="src/img/weather-icon.svg">
             <p id="info-weather">Scattered clouds</p>
           </div>
 
@@ -159,7 +163,6 @@
             <img class="info__weather__icon" src="src/img/sunset-icon.svg">
             <p id="info-sunset">19:49</p>
           </div>
-
         </div>
 
       </div>

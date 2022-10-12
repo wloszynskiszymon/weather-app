@@ -6,71 +6,55 @@ import themesView from "./views/themesView.js";
 import background from "./backgrounds/background.js";
 
 const controlCitySearch = async function (data) {
-  try {
-    // Query API with city data
-    const result = await getJSON(data);
+  // Query API with city data
+  const result = await getJSON(data);
 
-    // console.log(result);
-    // if (!result || (Array.isArray(data) && result.length === 0)) {
-    //   console.log("WRONG CITY AOAOAO");
-    //   return;
-    // }
+  // console.log(result);
+  // if (!result || (Array.isArray(data) && result.length === 0)) {
+  //   console.log("WRONG CITY AOAOAO");
+  //   return;
+  // }
 
-    // Save the result in the state
-    model.state.forecast = model.createForecastObject(result);
+  // Save the result in the state
+  model.state.forecast = model.createForecastObject(result);
 
-    if (model.state.currentView === "entryView") {
-      // Hide entry view
-      entryView.hideEntryView();
+  if (model.state.currentView === "entryView") {
+    // Hide entry view
+    entryView.hideEntryView();
 
-      // Render on the page
-      resultsView.renderData(model.state);
+    // Render on the page
+    resultsView.renderData(model.state);
 
-      // Show theme
-      resultsView.showResultsView();
+    // Show theme
+    resultsView.showResultsView();
 
-      // Change current view in app state
-      model.updateViewState("resultsView");
+    // Change current view in app state
+    model.updateViewState("resultsView");
+  }
 
-      console.log(model.state.forecast);
-    }
+  // Save information about background in app state
 
-    if (model.state.currentView === "resultsView") {
-      // Render on the page
-      resultsView.renderData(model.state);
-    }
+  model.updateBackground(background.validateForecastData(model.state));
 
-    // Save information about background in app state
-    console.log(
-      `${background.getBackgroundObject(model.state)} KURWA DZIALAJ `
-    );
-    model.updateBackground(background.getBackgroundObject(model.state));
+  // Set background
+  background.renderBackground(model.state);
 
-    console.log(model.state.background);
-    // Set background
-    resultsView.setBackground(model.state);
-  } catch (e) {
-    throw new Error(`${e}: Couldn't find such city D:`);
+  if (model.state.currentView === "resultsView") {
+    // Render on the page
+    resultsView.renderData(model.state);
   }
 };
 
 const controlShowEntryView = function () {
-  if (model.state.currentView === "resultsView") {
-    // Update app state
-    model.updateViewState("entryView");
+  if (model.state.currentView === "themesView") themesView.hideThemesView();
 
-    resultsView.hideResultsView();
+  if (model.state.currentView === "resultsView") resultsView.hideResultsView();
 
-    entryView.showEntryView();
-  }
+  model.updateViewState("entryView");
 
-  if (model.state.currentView === "themesView") {
-    model.updateViewState("entryView");
+  entryView.showEntryView();
 
-    themesView.hideThemesView();
-
-    entryView.showEntryView();
-  }
+  background.clearBackgrounds(true);
 };
 
 const controlShowThemesView = function () {
@@ -82,8 +66,15 @@ const controlShowThemesView = function () {
   themesView.showThemesView();
 };
 
-const controlBackground = function () {
-  background.getBackground(model.state);
+const controlBackground = function (
+  weatherRadioButtonValue,
+  timeRadioButtonValue
+) {
+  model.updateBackground(
+    background.validateFormData(weatherRadioButtonValue, timeRadioButtonValue)
+  );
+
+  background.renderBackground(model.state);
 };
 
 const init = function () {
