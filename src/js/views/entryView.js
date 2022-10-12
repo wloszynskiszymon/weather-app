@@ -1,6 +1,5 @@
-import "../model.js";
-
 class EntryView {
+  _background = document.querySelector("#background");
   _searchForm = document.querySelector(".search");
   _searchInput = document.querySelector(".search__input-city");
   _navLink = document.querySelector(".nav__link");
@@ -15,6 +14,23 @@ class EntryView {
 
   hideEntryView() {
     this._searchForm.classList.add("hidden");
+  }
+
+  addHandlerQueryByLocalization(handler) {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function (pos) {
+          const coords = {
+            lat: pos.coords.latitude,
+            lon: pos.coords.longitude,
+          };
+          handler(coords, true);
+        },
+        function () {
+          handler({}, false);
+        }
+      );
+    }
   }
 
   addHandlerSubmit(handler) {

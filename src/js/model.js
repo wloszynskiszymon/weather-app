@@ -1,22 +1,10 @@
 import { TIME_FORMAT, DATE_FORMAT } from "./helpers";
 
 export const state = {
-  forecast: {
-    sunrise: "08:12",
-    sunset: "18:29",
-    time: "23:04",
-    weatherID: 245,
-  },
-  background: {
-    background: "first-entry",
-    weather: "cloudy",
-    time: "morning",
-    isPrecipitation: true,
-    precipitation: "snow--morning",
-    thunder: false,
-  },
-
-  themeForm: {},
+  //  Info from API
+  forecast: {},
+  // Background info
+  background: {},
 
   currentView: "entryView",
 };
@@ -25,8 +13,6 @@ export const createForecastObject = function (data) {
   const calcTime = function (time) {
     return (time + data.timezone + getTimezone()) * 1000;
   };
-
-  console.log(data);
 
   const getTimezone = function () {
     const date = new Date();
@@ -93,3 +79,15 @@ export const updateBackground = function (background) {
 export const saveThemeFormData = function (data) {
   state.themeForm = data;
 };
+
+export const saveForecastData = function (data) {
+  state.forecast = data;
+};
+
+// IF ever needed:)
+// export const updateRootVariable = function () {
+//   const nightColor = "rgba(255, 255, 255, 0.05)";
+//   const dayColor = "rgba(0, 0, 0, 0.15)";
+//   const root = document.querySelector(":root");
+//   root.style.setProperty("--info-bg", nightColor);
+// };

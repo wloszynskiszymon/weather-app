@@ -1,5 +1,3 @@
-import background from "../backgrounds/background.js";
-
 class ResultsView {
   _data;
   _background = document.querySelector("#background");

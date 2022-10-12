@@ -2,31 +2,34 @@
   visibility: hidden;
   opacity: 0;
 
+  // transition !important to override all others and slow down hiding transition
+
   &--top {
     transform-origin: bottom;
-    transform: translateY(calc(-100vh - 30rem));
+    transform: translateY(calc(-100vh - 30rem)) !important;
+    transition: transform 0.5s ease-in-out !important;
   }
 
   &--bottom {
     transform-origin: top;
-    transform: translateY(calc(100vh + 30rem));
+    transform: translateY(calc(100vh + 30rem)) !important;
 
     &--theme {
       transform-origin: top;
-      transform: translateY(calc(100% + 30rem));
+      transform: translateY(calc(100% + 30rem)) !important;
       transition: opacity, 0.4s, transform 0.3s ease-in-out !important;
     }
   }
 
   &--left {
     transform-origin: right;
-    transform: translateX(calc(-100% - 30rem));
+    transform: translateX(calc(-100% - 30rem)) !important;
     transition: transform 0.5s ease-in-out !important;
   }
 
   &--right {
     transform-origin: left;
-    transform: translateX(calc(100% + 30rem));
+    transform: translateX(calc(100% + 30rem)) !important;
     transition: transform 0.5s ease-in-out !important;
     // For nav visiblity hidden in js after 1s
   }

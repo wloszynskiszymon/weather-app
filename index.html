@@ -17,10 +17,9 @@
 <body>
   <!-- https://openweathermap.org/ -->
   <!-- precipitations mozna chyba wywalic -->
-  <div id="background" class="first-entry">
+  <div id="background" class="spinner">
     <div id="atmospheric-fall" class=""></div>
     <div id="thunder" class=""></div>
-
   </div>
 
   <main class="main">
@@ -33,10 +32,6 @@
       </div>
     </nav>
 
-    <!-- Nav back (themesView to entryView) -->
-    <nav class="nav__back hidden">
-      <span class="hidden">Go back</span>
-    </nav>
 
     <!-- Nav arrow (mainView to entryView) -->
     <nav class="nav__arrow hidden--left">
@@ -98,7 +93,7 @@
       </div>
 
       <div class="theme__bottom">
-        <input class="theme__btn" type="submit" value="Set theme">
+        <input class="btn theme__btn" type="submit" value="Set theme">
       </div>
     </form>
 
@@ -116,58 +111,65 @@
 
         <div class="info__container--left">
           <div class="info__cell info__temperature">
-            <p><span id="info-temperature">18</span>&deg;</p>
+            <p><span id="info-temperature"></span>&deg;</p>
           </div>
           <div class="info__cell info__location">
-            <p><span id="info-location">Berlin</span>, <span id="info-country">GER</span></p>
+            <p><span id="info-location"></span>, <span id="info-country"></span></p>
           </div>
           <div class="info__cell info__date">
-            <p id="info-date">14 Sep 2022</p>
+            <p id="info-date"></p>
           </div>
           <div class="info__cell info__time">
-            <p><span id="info-time">21:37</span><sup id="info-timezone">(+7)</sup></p>
+            <p><span id="info-time"></span><sup id="info-timezone"></sup></p>
           </div>
 
           <div class="info__cell info__time-part">
-            <p><span id="info-time-part">Morning</span></p>
+            <p><span id="info-time-part"></span></p>
           </div>
         </div>
 
         <div class="info__container--right">
           <div class="info__weather__cell info__weather__weather">
             <img id="info-weather-icon" class="info__weather__icon" src="src/img/weather-icon.svg">
-            <p id="info-weather">Scattered clouds</p>
+            <p id="info-weather"></p>
           </div>
 
           <div class="info__weather__cell info__weather__wind">
             <img class="info__weather__icon" src="src/img/wind-icon.svg">
-            <p><span id="info-wind">8</span> km/h</p>
+            <p><span id="info-wind"></span> km/h</p>
           </div>
 
           <div class="info__weather__cell info__weather__pressure">
             <img class="info__weather__icon" src="src/img/pressure-icon.svg">
-            <p><span id="info-pressure">1003</span> hPa</p>
+            <p><span id="info-pressure"></span> hPa</p>
           </div>
 
           <div class="info__weather__cell info__weather__humidity">
             <img class="info__weather__icon" src="src/img/humidity-icon.svg">
-            <p><span id="info-humidity">64</span>%</p>
+            <p><span id="info-humidity"></span>%</p>
           </div>
 
           <div class="info__weather__cell info__weather__sunrise">
             <img class="info__weather__icon" src="src/img/sunrise-icon.svg">
-            <p id="info-sunrise">08:43</p>
+            <p id="info-sunrise"></p>
           </div>
 
           <div class="info__weather__cell info__weather__sunset">
             <img class="info__weather__icon" src="src/img/sunset-icon.svg">
-            <p id="info-sunset">19:49</p>
+            <p id="info-sunset"></p>
           </div>
         </div>
 
       </div>
 
     </section>
+
+
+
+    <div class="btn switch hidden--top">
+      <input type="checkbox" class="switch__checkbox">
+      <p>Show image version</p>
+    </div>
 
   </main>
 </body>

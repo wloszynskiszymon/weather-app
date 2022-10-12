@@ -8,9 +8,12 @@ const timeout = function (s) {
   });
 };
 
-export const getJSON = async function (city) {
+export const getJSON = async function (queryData, isCity = true) {
   try {
-    const apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+    let apiCall;
+    isCity
+      ? (apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${queryData}&appid=${API_KEY}&units=metric`)
+      : (apiCall = `https://api.openweathermap.org/data/2.5/weather?lat=${queryData.lat}&lon=${queryData.lon}&appid=${API_KEY}&units=metric`);
     const res = await Promise.race([fetch(apiCall), timeout(5)]);
     if (!res.ok) throw new Error(`Something went wrong, ${res.statusText}`);
     const data = await res.json();

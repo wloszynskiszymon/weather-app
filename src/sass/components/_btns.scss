@@ -1,0 +1,70 @@
+.btn {
+  width: 30rem;
+  height: 5rem;
+
+  pointer-events: all;
+
+  color: grey;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+
+  border: 2px solid grey;
+  border-radius: 200px;
+
+  cursor: pointer;
+  background: inherit;
+  transition: all 0.4s;
+}
+
+.switch {
+  position: absolute;
+  top: 3.55rem;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 200;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 2px solid white;
+
+  overflow: hidden;
+
+  &__checkbox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  p {
+    transition: transform 0.2s;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    letter-spacing: 0.1rem;
+
+    &::before {
+      content: "Show normal version";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      text-align: center;
+      white-space: nowrap;
+      transform: translateY(-10rem);
+    }
+  }
+
+  &__checkbox:checked ~ p {
+    transform: translateY(10rem);
+  }
+}

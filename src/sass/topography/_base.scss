@@ -43,3 +43,22 @@ body {
     height: $bp-height-fix;
   }
 }
+
+.spinner {
+  background-color: black;
+  z-index: 532523523532;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 60px;
+    width: 60px;
+    margin-top: -30px;
+    margin-left: -30px;
+    border-radius: 50%;
+    border-top: 2px solid white;
+    border-right: 2px solid transparent;
+    animation: spinner 0.8s linear infinite;
+  }
+}

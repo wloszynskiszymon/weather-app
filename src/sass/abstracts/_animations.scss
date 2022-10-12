@@ -59,35 +59,41 @@
     opacity: 0;
   }
 
-  5% {
+  25% {
     opacity: 0;
   }
 
-  6% {
+  26% {
     opacity: 0.2;
   }
 
-  7% {
+  27% {
     opacity: 0.5;
   }
 
-  8% {
+  28% {
     opacity: 1;
   }
 
-  9% {
+  29% {
     opacity: 0.4;
   }
 
-  10% {
+  30% {
     opacity: 0.7;
   }
 
-  15% {
+  35% {
     opacity: 0;
   }
 
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
   }
 }

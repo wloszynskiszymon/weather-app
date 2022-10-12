@@ -11,15 +11,8 @@
   --filter-grey: invert(68%) sepia(0%) saturate(1204%) hue-rotate(188deg)
     brightness(74%) contrast(84%);
 
-  // --color-day: 255, 255, 255;
-  // --alpha-day: 0.05;
-
-  // --color-night: #000;
-  // --alpha-night: 0.1;
-
-  // --info-bg: rgba(var(--color-day), var(--alpha-day));
-
-  --info-bg: rgba(255, 255, 255, 0.05);
+  // The "transparent" background for all components, It's in :root so it can be changed in javascript if background is making all unclear and unreadable
+  --info-bg: rgba(0, 0, 0, 0.15);
 }
 
 /*
@@ -72,7 +65,7 @@ $filter-rainy-night: invert(5%) sepia(25%) saturate(3547%) hue-rotate(141deg)
 
 /*
 ==========================================================
-                    FOR MEDIA QUEREIS
+                    FOR MEDIA QUERIES
 ==========================================================
 
 
