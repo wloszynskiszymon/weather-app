@@ -32,44 +32,45 @@ Every information is stored in app state.
 
 There is also a theme form to see all possible themes for the app. (It is not really usefull for user but I've just done it for scss and js practice purposes and handling forms with js).
 
-## **NOTE: All backgrounds were made by me in photoshop:)**
+> **NOTE: All backgrounds were made by me in photoshop:)**
 
 ### How background is rendered?
 
-> There are 3 divs
+There are 3 divs
 
-> - main background
-> - precipitation (snow, rain)
-> - thunder
+- main background
+- precipitation (snow, rain)
+- thunder
 
-> Background is created of two parts - **weather** and **time**
+Background is created of two parts - **weather** and **time**
 
-> **Weather** options:
+**Weather** options:
 
-> - sunny
-> - rainy
-> - snowy
-> - cloudy
-> - cloudy-scattered
+- sunny
+- rainy
+- snowy
+- cloudy
+- cloudy-scattered
 
-> **Time** options:
->
-> - morning
-> - day
-> - evening
-> - night
+**Time** options:
 
-> For example: sunny-morning
+- morning
+- day
+- evening
+- night
 
-> **IF** rainy or snowy is selected then app renders precipitation as well
-> NOTE: Also needs **time variant**
+For example: sunny-morning
 
-> **Preciptiation** options:
+**IF** rainy or snowy is selected then app renders precipitation as well
+NOTE: Also needs **time variant**
 
-> - rain
-> - snow
+**Preciptiation** options:
 
-> For example: rain--night
+- rain
+- snow
+
+For example: rain--night
+
 > NOTE: Two dashes here
 > NOTE: Rain can be also with thunder. For thunder it shows rainy theme and rain
 
@@ -81,25 +82,25 @@ There is also a theme form to see all possible themes for the app. (It is not re
 
 #### Morning
 
-> **Starts at:** Sunrise (recieved from API)
-> **Ends at:** 12
+**Starts at:** Sunrise (recieved from API)
+**Ends at:** 12
 
 #### Day
 
-> **Starts at:** 12:00
-> **Ends at:** Sunset - 2 hours (recieved from API)
+**Starts at:** 12:00
+**Ends at:** Sunset - 2 hours (recieved from API)
 
-> Example: Sun sets at 17:21. Number is rounded down to 17. 2 hours are deducted. Final day end hour: 15:00
-
-#### Evening
-
-> **Starts at:** Sunset (recieved from API)
-> **Ends at:** Sunrise
+Example: Sun sets at 17:21. Number is rounded down to 17. 2 hours are deducted. Final day end hour: 15:00
 
 #### Evening
 
-> **Starts at:** Sunrise (recieved from API)
-> **Ends at:** Sunset (recieved from API)
+**Starts at:** Sunset (recieved from API)
+**Ends at:** Sunrise
+
+#### Evening
+
+**Starts at:** Sunrise (recieved from API)
+**Ends at:** Sunset (recieved from API)
 
 ## Used API:
 
