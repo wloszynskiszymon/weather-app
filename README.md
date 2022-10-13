@@ -117,4 +117,10 @@ https://openweathermap.org/current
 See how IDs are translated to background
 https://openweathermap.org/weather-conditions
 
+## Used Technologies
+
+- HTML
+- SCSS
+- Vanilla JavaScript
+
 Project done by Szymon Włoszyński
