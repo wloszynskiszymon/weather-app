@@ -5,7 +5,7 @@
   &-night::after {
     @include full-screen-absolute;
 
-    background-image: url(../img/clouds-scattered.png);
+    background-image: url(../img/background-components/cloudy-scattered.png);
     background-size: cover;
     animation: clouds-movement 30s linear infinite;
     background-repeat: repeat-x;

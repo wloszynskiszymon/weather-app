@@ -9,6 +9,7 @@ export const state = {
   currentView: "entryView",
 };
 
+// Create object acording to data, returns forecast object
 export const createForecastObject = function (data) {
   const calcTime = function (time) {
     return (time + data.timezone + getTimezone()) * 1000;
@@ -84,7 +85,7 @@ export const saveForecastData = function (data) {
   state.forecast = data;
 };
 
-// IF ever needed:)
+// IF ever needed:) all "transparent" background would change
 // export const updateRootVariable = function () {
 //   const nightColor = "rgba(255, 255, 255, 0.05)";
 //   const dayColor = "rgba(0, 0, 0, 0.15)";

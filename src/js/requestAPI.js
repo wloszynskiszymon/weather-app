@@ -14,12 +14,15 @@ export const getJSON = async function (queryData, isCity = true) {
     isCity
       ? (apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${queryData}&appid=${API_KEY}&units=metric`)
       : (apiCall = `https://api.openweathermap.org/data/2.5/weather?lat=${queryData.lat}&lon=${queryData.lon}&appid=${API_KEY}&units=metric`);
+
+    // 404 error printing url cannot be handled without server I guess
     const res = await Promise.race([fetch(apiCall), timeout(5)]);
-    if (!res.ok) throw new Error(`Something went wrong, ${res.statusText}`);
+    if (!res.ok) return false;
+
     const data = await res.json();
 
     return data;
   } catch (e) {
-    throw new Error(`Ops! ${e}`);
+    throw e;
   }
 };

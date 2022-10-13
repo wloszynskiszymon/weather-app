@@ -1,2 +1,3 @@
 # weather-app
-Simple Weather App as portfolio project
+
+Simple Weather App Project for Portfolio

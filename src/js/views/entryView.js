@@ -4,16 +4,21 @@ class EntryView {
   _searchInput = document.querySelector(".search__input-city");
   _navLink = document.querySelector(".nav__link");
 
+  _errorMessage = "Sorry, your city was not found, please try again.";
+  _errorContainer = document.querySelector("#entry-view-error-container");
+  _errorText = document.querySelector("#entry-view-error-container p");
+
   constructor() {
     this.showEntryView();
   }
 
-  showEntryView() {
-    this._searchForm.classList.remove("hidden");
+  renderErrorMessage() {
+    this._errorContainer.classList.remove("hidden");
+    this._errorText.textContent = this._errorMessage;
   }
 
-  hideEntryView() {
-    this._searchForm.classList.add("hidden");
+  _hideErrorMessage() {
+    this._errorContainer.classList.add("hidden");
   }
 
   addHandlerQueryByLocalization(handler) {
@@ -45,6 +50,15 @@ class EntryView {
 
   addHandlerLinkClick(handler) {
     this._navLink.addEventListener("click", handler);
+  }
+
+  showEntryView() {
+    this._searchForm.classList.remove("hidden");
+  }
+
+  hideEntryView() {
+    this._searchForm.classList.add("hidden");
+    this._hideErrorMessage();
   }
 }
 

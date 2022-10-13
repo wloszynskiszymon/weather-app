@@ -2,7 +2,10 @@ class ResultsView {
   _data;
   _background = document.querySelector("#background");
 
-  // http://openweathermap.org/img/wn/10d@2x.png
+  _errorMessage = "Sorry, your city was not found, please try again.";
+  _errorContainer = document.querySelector("#results-view-error-container");
+  _errorText = document.querySelector("#results-view-error-container p");
+
   _navArrow = document.querySelector(".nav__arrow");
   _weatherInfo = document.querySelector(".info__container");
   _searchLoadedForm = document.querySelector(".search-loaded");
@@ -24,6 +27,15 @@ class ResultsView {
   _sunrise = document.querySelector("#info-sunrise");
   _sunset = document.querySelector("#info-sunset");
 
+  renderErrorMessage() {
+    this._errorContainer.classList.remove("hidden");
+    this._errorText.textContent = this._errorMessage;
+  }
+
+  _hideErrorMessage() {
+    this._errorContainer.classList.add("hidden");
+  }
+
   addHandlerShowTheme(handler) {
     this._searchLoadedForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -39,8 +51,14 @@ class ResultsView {
   }
 
   renderData(state) {
+    this._hideErrorMessage();
+    if (state.forecast.location.length > 10) {
+      this._location.textContent = state.forecast.location.slice(0, 7) + "...";
+      this._location.title = state.forecast.location;
+    } else {
+      this._location.textContent = state.forecast.location;
+    }
     this._temperature.textContent = state.forecast.temperature;
-    this._location.textContent = state.forecast.location;
     this._country.textContent = state.forecast.country;
     this._date.textContent = state.forecast.date;
     this._time.textContent = state.forecast.time;
@@ -63,6 +81,7 @@ class ResultsView {
   }
 
   hideResultsView() {
+    this._hideErrorMessage();
     this._weatherInfo.classList.add("hidden--bottom");
     this._navArrow.classList.add("hidden--left");
     this._searchLoadedForm.classList.add("hidden--top");

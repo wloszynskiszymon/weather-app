@@ -8,7 +8,7 @@
   &-night::before {
     @include full-screen-absolute;
 
-    background-image: url(../img/cloudy-sky.png);
+    background-image: url(../img/background-components/cloudy.png);
     background-repeat: repeat-x;
     background-size: 100% 100%;
 

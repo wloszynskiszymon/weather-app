@@ -39,3 +39,11 @@
   height: 100vh !important;
   overflow: hidden;
 }
+
+.disabled {
+  pointer-events: none !important;
+}
+
+.display-none {
+  display: none !important;
+}

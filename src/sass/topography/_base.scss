@@ -62,3 +62,21 @@ body {
     animation: spinner 0.8s linear infinite;
   }
 }
+
+.background__text {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1.5rem;
+  z-index: 500;
+
+  p {
+    font-family: "Tangerine", cursive;
+    font-size: 5rem;
+    letter-spacing: 2px;
+  }
+
+  @media only screen and (max-height: $bp-height-fix) {
+    top: 635px;
+  }
+}

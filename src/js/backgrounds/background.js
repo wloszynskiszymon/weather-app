@@ -2,6 +2,8 @@ class Background {
   _background = document.querySelector("#background");
   _precipitation = document.querySelector("#atmospheric-fall");
   _thunder = document.querySelector("#thunder");
+  _backgroundTextContainer = document.querySelector(".background__text");
+  _backgroundText = document.querySelector(".background__text p");
 
   _backgroundObject = {
     image: "",
@@ -14,16 +16,25 @@ class Background {
   };
 
   renderBackground(state, renderImageVersion = false) {
-    this.clearBackgrounds();
+    try {
+      if (!state.background.background) return this.renderDefaultBackground();
 
-    state.background.thunder && this._thunder.classList.add("thunder");
+      this.clearBackgrounds();
 
-    state.background.isPrecipitation &&
-      this._precipitation.classList.add(state.background.precipitation);
+      state.background.thunder && this._thunder.classList.add("thunder");
 
-    renderImageVersion
-      ? this._background.classList.add(state.background.image)
-      : this._background.classList.add(state.background.background);
+      state.background.isPrecipitation &&
+        this._precipitation.classList.add(state.background.precipitation);
+
+      this._validateTextBackground(state, renderImageVersion);
+
+      renderImageVersion
+        ? this._background.classList.add(state.background.image)
+        : this._background.classList.add(state.background.background);
+    } catch (e) {
+      this.renderDefaultBackground();
+      throw new Error(`Couldn't load background: ${e}`);
+    }
   }
 
   renderDefaultBackground() {
@@ -164,6 +175,17 @@ class Background {
       return true;
     } else {
       return false;
+    }
+  }
+
+  _validateTextBackground(state, renderImageVersion = false) {
+    if (state.currentView !== "resultsView") {
+      renderImageVersion
+        ? (this._backgroundText.textContent = state.background.image)
+        : (this._backgroundText.textContent = state.background.background);
+      this._backgroundTextContainer.classList.remove("hidden");
+    } else {
+      this._backgroundTextContainer.classList.add("hidden");
     }
   }
 

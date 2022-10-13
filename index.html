@@ -6,9 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Weather App</title>
+  <link rel="icon" href="src/img/icons/favicon.svg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600&family=Tangerine&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="src/sass/main.scss" />
   <script defer type="module" src="src/js/controller.js"></script>
@@ -20,6 +23,10 @@
   <div id="background" class="spinner">
     <div id="atmospheric-fall" class=""></div>
     <div id="thunder" class=""></div>
+  </div>
+
+  <div class="background__text hidden">
+    <p></p>
   </div>
 
   <main class="main">
@@ -35,7 +42,7 @@
 
     <!-- Nav arrow (mainView to entryView) -->
     <nav class="nav__arrow hidden--left">
-      <img class="nav__arrow__icon" src="src/img/back-icon.svg">
+      <img class="nav__arrow__icon" src="src/img/icons/back-icon.svg">
     </nav>
 
     <form class="search hidden">
@@ -43,9 +50,15 @@
       <div class="search__input">
         <input class="search__input-city" type="name" name="query" placeholder="Enter city name" id="city-input" />
         <button class="search__input__icon">
-          <img src="src/img/search-icon.svg">
+          <img src="src/img/icons/search-icon.svg">
         </button>
       </div>
+
+      <div id="entry-view-error-container" class="search__error hidden">
+        <img src="src/img/icons/error-icon.svg">
+        <p class="search__error-message">Sorry, your city was not found, please try again.</p>
+      </div>
+
       <nav class="nav__link">See all possible themes</nav>
     </form>
 
@@ -72,10 +85,10 @@
         <label class="theme__label" for="thunderstorm">Thunder</label>
 
         <input class="theme__input" type="radio" name="weather" value="cloudy" id="cloudy">
-        <label class="theme__label" for="cloudy">Clouds</label>
+        <label class="theme__label" for="cloudy">Cloudy</label>
 
         <input class="theme__input" type="radio" name="weather" value="cloudy-scattered" id="cloudy-scattered">
-        <label class="theme__label" for="cloudy-scattered">Scattered Clouds</label>
+        <label class="theme__label" for="cloudy-scattered">Cloudy Scattered</label>
       </div>
 
       <div class="theme__time">
@@ -93,7 +106,7 @@
       </div>
 
       <div class="theme__bottom">
-        <input class="btn theme__btn" type="submit" value="Set theme">
+        <input id="theme-submit-button" class="btn theme__btn disabled" type="submit" value="Set theme">
       </div>
     </form>
 
@@ -102,8 +115,13 @@
         <div class="search-loaded__input">
           <input class="search-loaded__input-city" type="name" name="query" placeholder="Enter city name" />
           <button class="search-loaded__input__icon">
-            <img src="src/img/search-icon.svg">
+            <img src="src/img/icons/search-icon.svg">
           </button>
+        </div>
+
+        <div id="results-view-error-container" class="search__error hidden">
+          <img src="src/img/icons/error-icon.svg">
+          <p class="search__error-message">Sorry, your city was not found, please try again.</p>
         </div>
       </form>
 
@@ -114,7 +132,7 @@
             <p><span id="info-temperature"></span>&deg;</p>
           </div>
           <div class="info__cell info__location">
-            <p><span id="info-location"></span>, <span id="info-country"></span></p>
+            <p><abbr id="info-location" title=""></abbr>, <span id="info-country"></span></p>
           </div>
           <div class="info__cell info__date">
             <p id="info-date"></p>
@@ -130,32 +148,32 @@
 
         <div class="info__container--right">
           <div class="info__weather__cell info__weather__weather">
-            <img id="info-weather-icon" class="info__weather__icon" src="src/img/weather-icon.svg">
+            <img id="info-weather-icon" class="info__weather__icon" src="src/img/icons/weather-icon.svg">
             <p id="info-weather"></p>
           </div>
 
           <div class="info__weather__cell info__weather__wind">
-            <img class="info__weather__icon" src="src/img/wind-icon.svg">
+            <img class="info__weather__icon" src="src/img/icons/wind-icon.svg">
             <p><span id="info-wind"></span> km/h</p>
           </div>
 
           <div class="info__weather__cell info__weather__pressure">
-            <img class="info__weather__icon" src="src/img/pressure-icon.svg">
+            <img class="info__weather__icon" src="src/img/icons/pressure-icon.svg">
             <p><span id="info-pressure"></span> hPa</p>
           </div>
 
           <div class="info__weather__cell info__weather__humidity">
-            <img class="info__weather__icon" src="src/img/humidity-icon.svg">
+            <img class="info__weather__icon" src="src/img/icons/humidity-icon.svg">
             <p><span id="info-humidity"></span>%</p>
           </div>
 
           <div class="info__weather__cell info__weather__sunrise">
-            <img class="info__weather__icon" src="src/img/sunrise-icon.svg">
+            <img class="info__weather__icon" src="src/img/icons/sunrise-icon.svg">
             <p id="info-sunrise"></p>
           </div>
 
           <div class="info__weather__cell info__weather__sunset">
-            <img class="info__weather__icon" src="src/img/sunset-icon.svg">
+            <img class="info__weather__icon" src="src/img/icons/sunset-icon.svg">
             <p id="info-sunset"></p>
           </div>
         </div>
@@ -166,10 +184,12 @@
 
 
 
-    <div class="btn switch hidden--top">
+    <div class="btn switch hidden--top display-none">
       <input type="checkbox" class="switch__checkbox">
       <p>Show image version</p>
     </div>
+
+
 
   </main>
 </body>

@@ -9,7 +9,7 @@
     @include full-screen-absolute;
 
     animation: clouds-movement 80s linear infinite;
-    background-image: url(../img/clouds-rain.png);
+    background-image: url(../img/background-components/clouds-rain.png);
     background-repeat: repeat-x;
     background-size: 100% 100%;
     z-index: 10;
