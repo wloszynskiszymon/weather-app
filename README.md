@@ -62,7 +62,8 @@ Background is created of two parts - **weather** and **time**
 For example: sunny-morning
 
 **IF** rainy or snowy is selected then app renders precipitation as well
-NOTE: Also needs **time variant**
+
+> NOTE: Also needs **time variant**
 
 **Preciptiation** options:
 
@@ -79,9 +80,9 @@ For example: rain--night
 
 ## How time is calculated?
 
-> **NOTE: Time is ALWAYS rounded to full hours. So 11:30 would be 12. 11:29 would be 11**
+> NOTE: Time is ALWAYS rounded to full hours. So 11:30 would be 12. 11:29 would be 11
 
-> **NOTE: IF value for time end and time start are the same then start wins. So if it's 11:39 then day is shown**
+> NOTE: IF value for time end and time start are the same then start wins. So if it's 11:39 then day is shown
 
 ### Morning
 
