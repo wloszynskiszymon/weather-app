@@ -116,3 +116,5 @@ https://openweathermap.org/current
 
 See how IDs are translated to background
 https://openweathermap.org/weather-conditions
+
+Project done by Szymon Włoszyński
