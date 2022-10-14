@@ -108,19 +108,26 @@ Example: Sun sets at 17:21. Number is rounded down to 17. 2 hours are deducted. 
 
 ## Used API:
 
-Used API
+Used API:
 https://openweathermap.org/
 
 This variant used:
 https://openweathermap.org/current
 
-See how IDs are translated to background
+See how IDs are translated to background:
 https://openweathermap.org/weather-conditions
+
+Filter color generator:
+https://codepen.io/sosuke/pen/Pjoqqp
 
 ## Used Technologies
 
 - HTML
 - SCSS
 - Vanilla JavaScript
+- NPM
+- Git
 
-Project done by Szymon Włoszyński
+Project build in JS MVC architecture
+
+Project done by Szymon Włoszyński, 2022
