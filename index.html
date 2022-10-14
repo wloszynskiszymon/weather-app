@@ -41,7 +41,7 @@
 
     <!-- Nav arrow (mainView to entryView) -->
     <nav class="nav__arrow hidden--left">
-      <img class="nav__arrow__icon" src="src/img/icons/back-icon.svg" alt="icon">
+      <img class="nav__arrow__icon" src="src/img/icons/back-icon.svg" alt="icon" loading="lazy">
     </nav>
 
     <form class="search hidden">
@@ -50,12 +50,12 @@
         <input class="search__input-city" type="text" name="query" placeholder="Enter city name" id="city-input"
           autocomplete="off" />
         <button class="search__input__icon">
-          <img src="src/img/icons/search-icon.svg" alt="icon">
+          <img src="src/img/icons/search-icon.svg" alt="icon" loading="lazy">
         </button>
       </div>
 
       <div id="entry-view-error-container" class="search__error hidden">
-        <img src="src/img/icons/error-icon.svg" alt="icon">
+        <img src="src/img/icons/error-icon.svg" alt="icon" loading="lazy">
         <p class="search__error-message"></p>
       </div>
 
@@ -123,12 +123,12 @@
           <input class="search-loaded__input-city" type="text" name="query" placeholder="Enter city name"
             autocomplete="off" />
           <button class="search-loaded__input__icon">
-            <img src="src/img/icons/search-icon.svg">
+            <img src="src/img/icons/search-icon.svg" alt="icon" loading="lazy">
           </button>
         </div>
 
         <div id="results-view-error-container" class="search__error hidden">
-          <img src="src/img/icons/error-icon.svg" alt="icon">
+          <img src="src/img/icons/error-icon.svg" alt="icon" loading="lazy">
           <p class="search__error-message">Sorry, your city was not found, please try again.</p>
         </div>
       </form>
@@ -157,32 +157,32 @@
         <div class="info__container--right">
           <div class="info__weather__cell info__weather__weather">
             <img id="info-weather-icon" class="info__weather__icon" onerror="this.src='src/img/icons/weather-icon.svg'"
-              alt="icon">
+              alt="icon" loading="lazy">
             <p id="info-weather"></p>
           </div>
 
           <div class="info__weather__cell info__weather__wind">
-            <img class="info__weather__icon" src="src/img/icons/wind-icon.svg" alt="icon">
+            <img class="info__weather__icon" src="src/img/icons/wind-icon.svg" alt="icon" loading="lazy">
             <p><span id="info-wind"></span> km/h</p>
           </div>
 
           <div class="info__weather__cell info__weather__pressure">
-            <img class="info__weather__icon" src="src/img/icons/pressure-icon.svg" alt="icon">
+            <img class="info__weather__icon" src="src/img/icons/pressure-icon.svg" alt="icon" loading="lazy">
             <p><span id="info-pressure"></span> hPa</p>
           </div>
 
           <div class="info__weather__cell info__weather__humidity">
-            <img class="info__weather__icon" src="src/img/icons/humidity-icon.svg " alt="icon">
+            <img class="info__weather__icon" src="src/img/icons/humidity-icon.svg " alt="icon" loading="lazy">
             <p><span id="info-humidity"></span>%</p>
           </div>
 
           <div class="info__weather__cell info__weather__sunrise">
-            <img class="info__weather__icon" src="src/img/icons/sunrise-icon.svg" alt="icon">
+            <img class="info__weather__icon" src="src/img/icons/sunrise-icon.svg" alt="icon" loading="lazy">
             <p id="info-sunrise"></p>
           </div>
 
           <div class="info__weather__cell info__weather__sunset">
-            <img class="info__weather__icon" src="src/img/icons/sunset-icon.svg" alt="icon">
+            <img class="info__weather__icon" src="src/img/icons/sunset-icon.svg" alt="icon" loading="lazy">
             <p id="info-sunset"></p>
           </div>
         </div>
