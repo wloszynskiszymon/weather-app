@@ -74,9 +74,14 @@ body {
     font-family: "Tangerine", cursive;
     font-size: 5rem;
     letter-spacing: 2px;
+
+    @media only screen and (max-width: $bp-mobile) {
+      font-size: 4rem;
+      letter-spacing: 1.2px;
+    }
   }
 
   @media only screen and (max-height: $bp-height-fix) {
-    top: 635px;
+    top: 545px;
   }
 }

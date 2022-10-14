@@ -263,10 +263,6 @@
       font-size: calc(1rem + 1.5vw);
       letter-spacing: 2px;
     }
-
-    &__btn {
-      transform: translateY(-5rem);
-    }
   }
 
   @media only screen and (max-width: $bp-tablet) and (max-height: $bp-height-fix) {

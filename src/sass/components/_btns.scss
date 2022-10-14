@@ -24,7 +24,6 @@
 
   left: 50%;
   transform: translateX(-50%);
-
   z-index: 200;
 
   display: flex;
@@ -36,6 +35,10 @@
   border: 2px solid white;
 
   overflow: hidden;
+
+  @media only screen and (max-width: $bp-mobile) {
+    top: 8.5rem;
+  }
 
   &__checkbox {
     position: absolute;

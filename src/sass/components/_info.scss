@@ -121,7 +121,7 @@
     }
   }
 
-  @media only screen and (max-width: $bp-mobile-small) {
+  @media only screen and (max-width: $bp-mobile) {
     &__temperature {
       font-size: 11rem;
       letter-spacing: -0.5rem;

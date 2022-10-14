@@ -2,14 +2,19 @@
   // Nav opening themes form
   &__circle {
     position: absolute;
-    right: 2.5rem;
     top: 2.5rem;
+    right: 2.5rem;
     border-radius: 50%;
     width: 7rem;
     height: 7rem;
     z-index: 900;
 
     transition: transform 0.4s;
+
+    @media only screen and (max-width: $bp-mobile) {
+      top: 1rem;
+      right: 1rem;
+    }
 
     // Invisible checkbox defining wheter it was clicked or not
     &-checkbox {
@@ -114,6 +119,11 @@
     align-content: center;
     overflow: hidden;
     cursor: pointer;
+
+    @media only screen and (max-width: $bp-mobile) {
+      top: 1rem;
+      left: 1rem;
+    }
 
     &__icon {
       z-index: 1000;

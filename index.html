@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   <title>Weather App</title>
   <link rel="icon" href="src/img/icons/favicon.svg">
 
@@ -41,20 +41,21 @@
 
     <!-- Nav arrow (mainView to entryView) -->
     <nav class="nav__arrow hidden--left">
-      <img class="nav__arrow__icon" src="src/img/icons/back-icon.svg">
+      <img class="nav__arrow__icon" src="src/img/icons/back-icon.svg" alt="icon">
     </nav>
 
     <form class="search hidden">
       <h1 class="search__h1">Weather App</h1>
       <div class="search__input">
-        <input class="search__input-city" type="name" name="query" placeholder="Enter city name" id="city-input" />
+        <input class="search__input-city" type="text" name="query" placeholder="Enter city name" id="city-input"
+          autocomplete="off" />
         <button class="search__input__icon">
-          <img src="src/img/icons/search-icon.svg">
+          <img src="src/img/icons/search-icon.svg" alt="icon">
         </button>
       </div>
 
       <div id="entry-view-error-container" class="search__error hidden">
-        <img src="src/img/icons/error-icon.svg">
+        <img src="src/img/icons/error-icon.svg" alt="icon">
         <p class="search__error-message"></p>
       </div>
 
@@ -119,14 +120,15 @@
     <section class="info">
       <form class="search-loaded hidden--top">
         <div class="search-loaded__input">
-          <input class="search-loaded__input-city" type="name" name="query" placeholder="Enter city name" />
+          <input class="search-loaded__input-city" type="text" name="query" placeholder="Enter city name"
+            autocomplete="off" />
           <button class="search-loaded__input__icon">
             <img src="src/img/icons/search-icon.svg">
           </button>
         </div>
 
         <div id="results-view-error-container" class="search__error hidden">
-          <img src="src/img/icons/error-icon.svg">
+          <img src="src/img/icons/error-icon.svg" alt="icon">
           <p class="search__error-message">Sorry, your city was not found, please try again.</p>
         </div>
       </form>
@@ -154,32 +156,33 @@
 
         <div class="info__container--right">
           <div class="info__weather__cell info__weather__weather">
-            <img id="info-weather-icon" class="info__weather__icon" src="src/img/icons/weather-icon.svg">
+            <img id="info-weather-icon" class="info__weather__icon" onerror="this.src='src/img/icons/weather-icon.svg'"
+              alt="icon">
             <p id="info-weather"></p>
           </div>
 
           <div class="info__weather__cell info__weather__wind">
-            <img class="info__weather__icon" src="src/img/icons/wind-icon.svg">
+            <img class="info__weather__icon" src="src/img/icons/wind-icon.svg" alt="icon">
             <p><span id="info-wind"></span> km/h</p>
           </div>
 
           <div class="info__weather__cell info__weather__pressure">
-            <img class="info__weather__icon" src="src/img/icons/pressure-icon.svg">
+            <img class="info__weather__icon" src="src/img/icons/pressure-icon.svg" alt="icon">
             <p><span id="info-pressure"></span> hPa</p>
           </div>
 
           <div class="info__weather__cell info__weather__humidity">
-            <img class="info__weather__icon" src="src/img/icons/humidity-icon.svg">
+            <img class="info__weather__icon" src="src/img/icons/humidity-icon.svg " alt="icon">
             <p><span id="info-humidity"></span>%</p>
           </div>
 
           <div class="info__weather__cell info__weather__sunrise">
-            <img class="info__weather__icon" src="src/img/icons/sunrise-icon.svg">
+            <img class="info__weather__icon" src="src/img/icons/sunrise-icon.svg" alt="icon">
             <p id="info-sunrise"></p>
           </div>
 
           <div class="info__weather__cell info__weather__sunset">
-            <img class="info__weather__icon" src="src/img/icons/sunset-icon.svg">
+            <img class="info__weather__icon" src="src/img/icons/sunset-icon.svg" alt="icon">
             <p id="info-sunset"></p>
           </div>
         </div>
