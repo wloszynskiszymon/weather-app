@@ -7,8 +7,9 @@
   &-night::before {
     @include full-screen-absolute;
 
-    background-repeat: repeat-x;
-    background-size: 100% 100%;
+    background-repeat: repeat-x !important;
+    background-size: 100% 100% !important;
+
     @media only screen and (max-width: $bp-tablet) {
       background-size: 200% 100%;
     }

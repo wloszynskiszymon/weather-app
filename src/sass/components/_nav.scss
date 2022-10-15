@@ -85,8 +85,8 @@
     // Background increase animation
     &-checkbox:checked ~ &-background {
       background-color: rgba(0, 0, 0, 0.9);
-      width: 150rem;
-      height: 150rem;
+      width: calc(150rem + 100vh);
+      height: calc(150rem + 100vh);
       transform: scale(6);
     }
   }

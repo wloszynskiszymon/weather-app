@@ -1,4 +1,3 @@
-// Main sass file
 @import "./abstracts/mixins";
 @import "./abstracts/functions";
 @import "./abstracts/variables";
@@ -13,14 +12,14 @@
 @import "./components/search-form";
 @import "./components/btns";
 
+@import "./background-addons/clouds";
+@import "./background-addons/snow";
+@import "./background-addons/rain";
+@import "./background-addons/thunder";
+
 @import "./backgrounds/entry";
 @import "./backgrounds/sunny";
 @import "./backgrounds/cloudy";
 @import "./backgrounds/rainy";
 @import "./backgrounds/snowy";
 @import "./backgrounds/scattered-cloudy";
-
-@import "./background-addons/snow";
-@import "./background-addons/rain";
-@import "./background-addons/thunder";
-@import "./background-addons/clouds";

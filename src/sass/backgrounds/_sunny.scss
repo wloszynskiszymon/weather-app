@@ -6,7 +6,7 @@
     @include sun-moon-day-fix;
 
     animation: night-shine 3s linear infinite;
-    background-image: url(../img/background-components/sun.png);
+    background: url(../img/background-components/sun.png);
     background-repeat: no-repeat;
 
     z-index: 5;
@@ -72,12 +72,14 @@
         transform: scale(1.4);
       }
     }
+  }
+}
 
-    &::after {
-      @include full-screen-absolute;
-      // Star dots gradient
-      @include bg-dots;
-      background-size: 50vw 50vh;
-    }
+.sunny-night {
+  &::after {
+    @include full-screen-absolute;
+    // Star dots gradient
+    @include bg-dots;
+    background-size: 50vw 50vh;
   }
 }

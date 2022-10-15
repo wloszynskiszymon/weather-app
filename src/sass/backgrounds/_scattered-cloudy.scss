@@ -5,7 +5,9 @@
   &-night::after {
     @include full-screen-absolute;
 
-    background-size: cover;
+    background-repeat: repeat-x !important;
+    background-size: 100% 100% !important;
+
     animation: clouds-movement 30s linear infinite;
     background-repeat: repeat-x;
 
