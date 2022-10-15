@@ -5,35 +5,10 @@
   &-night::after {
     @include full-screen-absolute;
 
-    background-image: url(../img/background-components/cloudy-scattered.png);
     background-size: cover;
     animation: clouds-movement 30s linear infinite;
     background-repeat: repeat-x;
 
     z-index: 7;
-  }
-
-  &-morning {
-    &::after {
-      filter: $filter-cloudy-morning;
-    }
-  }
-
-  &-day {
-    &::before {
-      filter: $filter-cloudy-day;
-    }
-  }
-
-  &-evening {
-    &::after {
-      filter: $filter-cloudy-evening;
-    }
-  }
-
-  &-night {
-    &::after {
-      filter: $filter-cloudy-night;
-    }
   }
 }

@@ -8,7 +8,6 @@
 
 html {
   font-size: 62.5%;
-  // font-size: 40%;
   color: white;
 
   @media only screen and (max-width: $bp-tablet) {
@@ -31,10 +30,6 @@ body {
   @media only screen and (max-height: $bp-height-fix) {
     height: $bp-height-fix;
   }
-
-  // display: grid;
-  // grid-template-columns: repeat(12, 1fr);
-  // grid-template-rows: repeat(10, 1fr);
 }
 
 #background {
@@ -64,7 +59,7 @@ body {
 }
 
 .background__text {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   margin: 1.5rem;
@@ -79,9 +74,5 @@ body {
       font-size: 4rem;
       letter-spacing: 1.2px;
     }
-  }
-
-  @media only screen and (max-height: $bp-height-fix) {
-    top: 545px;
   }
 }

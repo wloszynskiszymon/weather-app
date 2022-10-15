@@ -65,7 +65,8 @@ class ResultsView {
     this._timezone.textContent = state.forecast.timezone;
     this._timepart.textContent = state.background.time;
 
-    this._weatherIcon.src = `http://openweathermap.org/img/wn/${state.forecast.icon}@2x.png`;
+    this._weatherIcon.src = `https://openweathermap.org/img/wn/${state.forecast.icon}@2x.png`;
+
     this._weather.textContent = state.forecast.weather;
     this._pressure.textContent = state.forecast.pressure;
     this._humidity.textContent = state.forecast.humidity;

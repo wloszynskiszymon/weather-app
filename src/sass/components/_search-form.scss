@@ -17,6 +17,7 @@
   transition: all 0.2s;
 
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 
   z-index: 100;
 
@@ -29,6 +30,7 @@
     &-city {
       all: unset;
 
+      width: 80%;
       font-size: 2rem;
       padding: 0 4rem;
       border-radius: 200px;
@@ -101,10 +103,10 @@
   }
 
   &__input {
+    width: 80%;
     margin-top: 4rem;
 
     &-city {
-      width: 40rem;
       height: 5rem;
       background-color: var(--info-bg);
     }
@@ -156,33 +158,9 @@
         }
 
         &-city:focus ~ &__icon {
-          transform: translateX(-2.5rem);
+          transform: translateX(-1.5rem);
         }
       }
-    }
-  }
-}
-
-@media only screen and (max-width: $bp-mobile) {
-  .search__input {
-    &-city:focus ~ &__icon {
-      transform: translateX(-1rem);
-    }
-  }
-}
-
-@media only screen and (max-width: $bp-mobile-small) {
-  .search {
-    min-width: 30rem;
-
-    height: 50%;
-
-    &__h1 {
-      font-size: 5rem;
-    }
-
-    &__input-city {
-      width: 60vw;
     }
   }
 }

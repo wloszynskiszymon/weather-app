@@ -2,6 +2,7 @@
 @mixin bg-dots($type: "stars", $time: null) {
   $color: #fff;
   @if $type == "snow" {
+    // Gives color for time of the day
     $color: getColorForPrecipitations($time);
   }
 
@@ -40,6 +41,7 @@
 
 // possible arguemnts: "morning, "day", "evening, "night"
 @mixin bg-rain($time) {
+  // Gives color for time of the day
   $color: getColorForPrecipitations($time);
 
   content: "";

@@ -9,61 +9,75 @@
     @include full-screen-absolute;
 
     animation: clouds-movement 80s linear infinite;
-    background-image: url(../img/background-components/clouds-rain.png);
+
     background-repeat: repeat-x;
     background-size: 100% 100%;
     z-index: 10;
   }
 }
 
-.snowy {
-  &-morning {
-    &::before {
-      filter: $filter-snowy-morning;
-    }
+.rainy {
+  &-morning::before {
+    background: url(../img/background-components/rainy-morning.png);
   }
-
-  &-day {
-    &::before {
-      filter: $filter-snowy-day;
-    }
+  &-day::before {
+    background: url(../img/background-components/rainy-day.png);
   }
-
-  &-evening {
-    &::before {
-      filter: $filter-snowy-evening;
-    }
+  &-evening::before {
+    background: url(../img/background-components/rainy-evening.png);
   }
-
-  &-night {
-    &::before {
-      filter: $filter-snowy-night;
-    }
+  &-night::before {
+    background: url(../img/background-components/rainy-night.png);
   }
 }
 
-.rainy {
-  &-morning {
-    &::before {
-      filter: $filter-rainy-morning;
-    }
+.snowy {
+  &-morning::before {
+    background: url(../img/background-components/snowy-morning.png);
+  }
+  &-day::before {
+    background: url(../img/background-components/snowy-day.png);
+  }
+  &-evening::before {
+    background: url(../img/background-components/rainy-evening.png);
+  }
+  &-night::before {
+    background: url(../img/background-components/snowy-night.png);
+  }
+}
+
+.cloudy {
+  &-morning::before {
+    background: url(../img/background-components/cloudy-morning.png);
   }
 
-  &-day {
-    &::before {
-      filter: $filter-rainy-day;
-    }
+  &-day::before {
+    background: url(../img/background-components/cloudy-day.png);
   }
 
-  &-evening {
-    &::before {
-      filter: $filter-rainy-evening;
-    }
+  &-evening::before {
+    background: url(../img/background-components/cloudy-evening.png);
   }
 
-  &-night {
-    &::before {
-      filter: $filter-rainy-night;
-    }
+  &-night::before {
+    background: url(../img/background-components/cloudy-night.png);
+  }
+}
+
+.cloudy-scattered {
+  &-morning::after {
+    background: url(../img/background-components/cloudy-scattered-morning.png);
+  }
+
+  &-day::after {
+    background: url(../img/background-components/cloudy-scattered-day.png);
+  }
+
+  &-evening::after {
+    background: url(../img/background-components/cloudy-scattered-evening.png);
+  }
+
+  &-night::after {
+    background: url(../img/background-components/cloudy-scattered-night.png);
   }
 }

@@ -28,9 +28,11 @@ class Background {
 
       this._validateTextBackground(state, renderImageVersion);
 
-      renderImageVersion
-        ? this._background.classList.add(state.background.image)
-        : this._background.classList.add(state.background.background);
+      if (renderImageVersion) {
+        this._background.classList.add(state.background.image);
+      } else {
+        this._background.classList.add(state.background.background);
+      }
     } catch (e) {
       this.renderDefaultBackground();
       throw new Error(`Couldn't load background: ${e}`);
