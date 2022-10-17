@@ -18,7 +18,7 @@ npm install
 npm start
 ```
 
-##OR 
+## OR 
 
 Visit the website:
 https://weather-app-szymon.netlify.app/
