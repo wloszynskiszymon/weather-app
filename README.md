@@ -6,7 +6,7 @@ Simple Weather App Project for Portfolio
 
 1. Download repository
 
-2. Run in the repository
+2. Run in console in the repository folder
 
 ```bash
 npm install
@@ -17,6 +17,11 @@ npm install
 ```bash
 npm start
 ```
+
+##OR 
+
+Visit the website:
+https://weather-app-szymon.netlify.app/
 
 ## How the app works
 
