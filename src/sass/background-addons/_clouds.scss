@@ -1,5 +1,42 @@
 // Here you can find clouds for rainy and snowy themes.
 // Clouds for cloudy theme are in _cloudy.scss
+
+.rainy {
+  &-morning::before {
+    background: getCloudsImage("rainy", "morning");
+  }
+
+  &-day::before {
+    background: getCloudsImage("rainy", "day");
+  }
+
+  &-evening::before {
+    background: getCloudsImage("rainy", "evening");
+  }
+
+  &-night::before {
+    background: getCloudsImage("rainy", "night");
+  }
+}
+
+.snowy {
+  &-morning::before {
+    background: getCloudsImage("snowy", "morning");
+  }
+
+  &-day::before {
+    background: getCloudsImage("snowy", "day");
+  }
+
+  &-evening::before {
+    background: getCloudsImage("snowy", "evening");
+  }
+
+  &-night::before {
+    background: getCloudsImage("snowy", "night");
+  }
+}
+
 .rainy,
 .snowy {
   &-morning::before,
@@ -8,76 +45,15 @@
   &-night::before {
     @include full-screen-absolute;
 
-    background-repeat: repeat-x !important;
-    background-size: 100% 100% !important;
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
+
+    @media only screen and (max-width: $bp-tablet) {
+      background-size: 200% 100%;
+    }
+
     animation: clouds-movement 80s linear infinite;
 
     z-index: 10;
-  }
-}
-
-.rainy {
-  &-morning::before {
-    background: url(../img/background-components/rainy-morning.png);
-  }
-  &-day::before {
-    background: url(../img/background-components/rainy-day.png);
-  }
-  &-evening::before {
-    background: url(../img/background-components/rainy-evening.png);
-  }
-  &-night::before {
-    background: url(../img/background-components/rainy-night.png);
-  }
-}
-
-.snowy {
-  &-morning::before {
-    background: url(../img/background-components/snowy-morning.png);
-  }
-  &-day::before {
-    background: url(../img/background-components/snowy-day.png);
-  }
-  &-evening::before {
-    background: url(../img/background-components/rainy-evening.png);
-  }
-  &-night::before {
-    background: url(../img/background-components/snowy-night.png);
-  }
-}
-
-.cloudy {
-  &-morning::before {
-    background: url(../img/background-components/cloudy-morning.png);
-  }
-
-  &-day::before {
-    background: url(../img/background-components/cloudy-day.png);
-  }
-
-  &-evening::before {
-    background: url(../img/background-components/cloudy-evening.png);
-  }
-
-  &-night::before {
-    background: url(../img/background-components/cloudy-night.png);
-  }
-}
-
-.cloudy-scattered {
-  &-morning::after {
-    background: url(../img/background-components/cloudy-scattered-morning.png);
-  }
-
-  &-day::after {
-    background: url(../img/background-components/cloudy-scattered-day.png);
-  }
-
-  &-evening::after {
-    background: url(../img/background-components/cloudy-scattered-evening.png);
-  }
-
-  &-night::after {
-    background: url(../img/background-components/cloudy-scattered-night.png);
   }
 }

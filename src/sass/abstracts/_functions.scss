@@ -11,3 +11,63 @@
     @return -1;
   }
 }
+
+@function getCloudsImage($weather, $time) {
+  @if $weather == "cloudy" {
+    @if $time == "morning" {
+      @return url(../img/background-components/cloudy-morning.png);
+    } @else if $time == "day" {
+      @return url(../img/background-components/cloudy-day.png);
+    } @else if $time == "evening" {
+      @return url(../img/background-components/cloudy-evening.png);
+    } @else if $time == "night" {
+      @return url(../img/background-components/cloudy-night.png);
+    } @else {
+      @return "error - cloudy";
+    }
+  }
+
+  @if $weather == "cloudy-scattered" {
+    @if $time == "morning" {
+      @return url(../img/background-components/cloudy-scattered-morning.png);
+    } @else if $time == "day" {
+      @return url(../img/background-components/cloudy-scattered-day.png);
+    } @else if $time == "evening" {
+      @return url(../img/background-components/cloudy-scattered-evening.png);
+    } @else if $time == "night" {
+      @return url(../img/background-components/cloudy-scattered-night.png);
+    } @else {
+      @return "error - cloudy-scattered";
+    }
+  }
+
+  @if $weather == "rainy" {
+    @if $time == "morning" {
+      @return url(../img/background-components/rainy-morning.png);
+    } @else if $time == "day" {
+      @return url(../img/background-components/rainy-day.png);
+    } @else if $time == "evening" {
+      @return url(../img/background-components/rainy-evening.png);
+    } @else if $time == "night" {
+      @return url(../img/background-components/rainy-night.png);
+    } @else {
+      @return "error - rainy";
+    }
+  }
+
+  @if $weather == "snowy" {
+    @if $time == "morning" {
+      @return url(../img/background-components/snowy-morning.png);
+    } @else if $time == "day" {
+      @return url(../img/background-components/snowy-day.png);
+    } @else if $time == "evening" {
+      @return url(../img/background-components/snowy-evening.png);
+    } @else if $time == "night" {
+      @return url(../img/background-components/snowy-night.png);
+    } @else {
+      @return "error - snowy";
+    }
+  }
+
+  @return "there are no clouds like that";
+}

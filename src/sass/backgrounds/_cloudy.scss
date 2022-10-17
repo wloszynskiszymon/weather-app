@@ -1,14 +1,30 @@
 // Cloudy has background equal to rainy one. (Located under _rainy.scss)
 // Rainy and snowy clouds included here
 .cloudy {
+  &-morning::before {
+    background: getCloudsImage("cloudy", "morning");
+  }
+
+  &-day::before {
+    background: getCloudsImage("cloudy", "day");
+  }
+
+  &-evening::before {
+    background: getCloudsImage("cloudy", "evening");
+  }
+
+  &-night::before {
+    background: getCloudsImage("cloudy", "night");
+  }
+
   &-morning::before,
   &-day::before,
   &-evening::before,
   &-night::before {
     @include full-screen-absolute;
 
-    background-repeat: repeat-x !important;
-    background-size: 100% 100% !important;
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
 
     @media only screen and (max-width: $bp-tablet) {
       background-size: 200% 100%;
