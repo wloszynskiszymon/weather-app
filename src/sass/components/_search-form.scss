@@ -147,6 +147,10 @@
 
         background-color: var(--info-bg);
 
+        &:focus {
+          background: rgba(0, 0, 0, 0.5);
+        }
+
         @media only screen and (max-width: $bp-tablet) {
           width: calc(15rem + 25vw);
         }
