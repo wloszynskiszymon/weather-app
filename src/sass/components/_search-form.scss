@@ -68,11 +68,25 @@
   &__h1 {
     width: 80%;
     text-align: center;
-    font-size: 6rem;
+    font-size: 5.5rem;
     font-weight: 300;
     margin-bottom: 3rem;
     border-bottom: 1px solid grey;
     padding-bottom: 2rem;
+    white-space: nowrap;
+  }
+
+  &__github {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__error {

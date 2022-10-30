@@ -4,6 +4,10 @@ Simple Weather App Project for Portfolio
 
 ## How to start?
 
+Visit the website: https://weather-app-szymon.netlify.app/
+
+### OR
+
 1. Download repository
 
 2. Run in the repository
@@ -17,6 +21,26 @@ npm install
 ```bash
 npm start
 ```
+
+## What have I learnt in this project?
+
+- Why is it good to first design project and not change your mind 20 times delaying it for couple of weeks D:
+
+- How to handle API.
+- How to implement advanced animations.
+- How to handle forms.
+- How to create advancly structured project.
+- How CSS and JavaScript can coorporate deeply.
+- How to Time in works in JavaScript.
+- How to use Photoshop for designing simple images.
+- How to use Git in project.
+- How to use SCSS functions and variables.
+- How MVC architecture works.
+- How to find solutions in the internet.
+- How to name classes properly.
+- Why clean code is so imporant.
+
+- Better understand asynchronous JavaScript.
 
 ## How the app works
 
@@ -129,5 +153,7 @@ https://codepen.io/sosuke/pen/Pjoqqp
 - Git
 
 Project build in JS MVC architecture
+
+Time spent on this project: 5-6 weeks.
 
 Project done by Szymon Włoszyński, 2022
