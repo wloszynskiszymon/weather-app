@@ -10,7 +10,7 @@ Visit the website: https://weather-app-szymon.netlify.app/
 
 1. Download repository
 
-2. Run in the repository
+2. Run in console in the repository folder
 
 ```bash
 npm install
@@ -40,7 +40,7 @@ npm start
 - How to name classes properly.
 - Why clean code is so imporant.
 
-- Better understand asynchronous JavaScript.
+- Better understand asynchronous JavaScript
 
 ## How the app works
 
